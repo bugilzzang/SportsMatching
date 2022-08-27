@@ -1,88 +1,50 @@
-<!doctype html>
-<html>
-    <head>
-        <title>SM Login Page</title>
-        <meta name="viewprot"content="width=device-width, initial-scale=1, user-scalable=0">
-        <style>
-            .main{
-                align-items: center;
-                width : 100%;
-                background-color: azure;
-            }
-            h1 {
-                width: 100%;
-                line-height : 150px;
-                text-align : center;
-                background-color: #3366DD;
-                margin-bottom: 250px;
-            }
-            .logo {
-                width : 150px;
-                height : 150px;
-                margin-left : 44%;
-                margin-bottom : 140px;
-            }
-            .idpw {
-                width : 50%;
-                
-                height : 100px;
-                float : left;
-                margin-left : 25%;
-                border : 1px solid black;
-                font-size: 50px;
-            }
+<!DOCTYPE html>
+<head>
+    <title>SM LOGIN PAGE</title>
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="member.css">
+    <style type="text/css">
 
-            .loginbtn {
-                float : left;
-                width : 33.33%;
-                height : 60px;
-                padding : 10px;
-                margin-left: 100px;
-                text-align: center;
-                font-weight: bold;
-                margin-left : 33.33%;
-                margin-top : 80px;
-                font-size : 30px;
-            }
-            .loginfo{
-                float: left;
-                width : 100%;
-                height : 50px;
-                padding-left : 20%;
-                margin-top : 70px;
-            }
-            .infobtn{
-                background-color: azure;
-                width : 200px;
-                height : 40px;
-                text-align: center;
-                font-size : 20px;
-                
-            }
-        </style>
-    </head>
-    <body style="background-color: azure;">
-        <div class = "main">
-            <div>
-                <h1>SPORT MATCHING</h1>
-            </div>
-        
-            <div>
-                <div class="logo">로고이미지</div>
+    </style>
+</head>
+
+<body>
+    <div class="logform">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="loginrow">
+                    <h1>우리동네 스포츠 로그인</h1>
+                </div>
             </div>
 
-            <div>
-                <input type="text" placeholder="ID" id="loginID" class="idpw">
-                <input type="text" placeholder="PW" id="loginPW" class="idpw">
-                <Button class = "loginbtn">로그인이미지대체</Button>
-            </div>
+            
 
-            <div class="loginfo">
-                <button class="infobtn">아이디찾기</button>
-                <button class="infobtn">비밀번호찾기</button>
-                <button class="infobtn"> 회원가입</button>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <input type="text" name="userid" id="userid" class="forminfo" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="userpw" id="userpw" class="forminfo" placeholder="PASSWORD">
+                </div>
             </div>
         </div>
+        <div class="panel-btn">
+            <div class="row">
+                <button class="loginbtn" id="loginbtn">로그인</button>
+            </div>            
+        </div>
+    </div>
 
-    </body>
-</html>
+    <div class="signform">
+        <div class="row">
+            <div class="findform">
+                <button class="findid" id="findid">아이디찾기</button>
+                <button class="findpw" id="findpw">비밀번호찾기</button>
+                <button class="signupgo" id="signupgo">회원가입</button>
+            </div>
+        </div>       
+    </div>
+
+</body>
