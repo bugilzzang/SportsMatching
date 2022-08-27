@@ -1,41 +1,50 @@
-<!doctype html>
-<html>
-    <head>
-        <title>SM Login Page</title>
-        <style>
-            .section {
-                width : 100%;
-            }
-            .idpw {
-                margin-left : 30px;
-            }
-            .title {
-                height: 70px;
-                align-items: center;
-                margin-left : 20px;
-                margin-right : 800px;
-                font-weight: bold;
-                line-height: 67px;
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <h3 style="text-align : center;border-bottom : 10px solid #3366DD;">로그인</h3>
-        </div>
-        
-        <div class="section">
-            <form>
-                ID : <input type = "text" name="logID"/>
-            </form>
-            <form>
-                PW : <input type = "text" name="logPW"/>
-            </form>
-        </div>
-            <Button>로그인</Button>
-        <div >
-            
-        </div>
+<!DOCTYPE html>
+<head>
+    <title>SM LOGIN PAGE</title>
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="member.css">
+    <style type="text/css">
 
-    </body>
-</html>
+    </style>
+</head>
+
+<body>
+    <div class="logform">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="loginrow">
+                    <h1>우리동네 스포츠 로그인</h1>
+                </div>
+            </div>
+
+            
+
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <input type="text" name="userid" id="userid" class="forminfo" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="userpw" id="userpw" class="forminfo" placeholder="PASSWORD">
+                </div>
+            </div>
+        </div>
+        <div class="panel-btn">
+            <div class="row">
+                <button class="loginbtn" id="loginbtn">로그인</button>
+            </div>            
+        </div>
+    </div>
+
+    <div class="signform">
+        <div class="row">
+            <div class="findform">
+                <button class="findid" id="findid">아이디찾기</button>
+                <button class="findpw" id="findpw">비밀번호찾기</button>
+                <button class="signupgo" id="signupgo">회원가입</button>
+            </div>
+        </div>       
+    </div>
+
+</body>

@@ -1,3 +1,190 @@
 <html>
 
+<style>
+body {
+	background-color: #222222;
+	margin: 0 0 0 0;
+	font-family: Arial;
+}
+
+.content_text {
+	color: #FFFFFF;
+}
+.menu_text {
+	color: #CCCCCC;
+}
+.link_text {
+	color: #00C2EE;
+}
+
+#title_area {
+	height: 150px;
+	background-color: #333333;
+	padding: 25px 50px 0 50px;
+	line-height: 125px;
+}
+#content_area {
+	padding: 100px 33px 0 33px;
+}
+
+#title_text {
+	font-size: 64px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.menu_button {
+	font-size: 36px;
+}
+
+#login_status {
+	float: right;
+	margin-top: 10px;
+}
+.content_title_text {
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 60px;
+}
+.content_desc_text {
+	font-size: 42px;
+	display: inline-block;
+}
+.content_box {
+	padding: 30px 0 30px 0;
+	background-color: #2A2A2A;
+}
+.content_input1 {
+	background-color: #333333;
+	width: 300px;
+	height: 60px;
+	margin: 0 30px 0 30px;
+	border-radius: 12px;
+	text-align: center;
+	border: 3px solid #999999;
+}
+.content_input2 {
+	background-color: #333333;
+	width: 250px;
+	height: 60px;
+	margin: 0 30px 0 30px;
+	border-radius: 12px;
+	text-align: center;
+	border: 3px solid #999999;
+}
+.content_input_text {
+	color: #FFFFFF;
+}
+.content_button {
+	width: 200px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	text-decoration: none;
+	border: 5px solid #00A3E5;
+}
+.content_desc_head {
+	width: 180px;
+	margin-left: 8px;
+}
+.content_select_text {
+	font-size: 14px;
+}
+.content_line {
+	border-top: 5px solid #333333;
+}
+.content_image {
+	width: 42px;
+	height: 42px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	display: inline-block;
+	margin-left: 10px;
+	line-height: 28px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+   background: url(./images/date_img.png) no-repeat;
+   width: 42px;
+   height: 42px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+   background: url(./images/clock_img.png) no-repeat;
+   width: 42px;
+   height: 42px;
+}
+</style>
+
+<head>
+<title>Sports Matching - </title>
+</head>
+
+<body>
+
+<div id='title_area'>
+	<a href='SportsMatching.html' class='content_text' id='title_text'>Sports Matching</a>
+	
+	<!--DEFAULT NO LOGIN STATE-->
+	<div id='login_status'>
+		<a class='menu_button content_text'>로그인</a>
+	</div>
+</div>
+
+<div id='content_area'>
+	<div class='content_text content_title_text'>운동 매칭하기</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>종목</div>
+		<select class='content_input_text content_desc_text content_input1' id='kind_input'>
+			<option class='content_input_text content_select_text' value='축구'>축구</option>
+			<option class='content_input_text content_select_text' value='풋살'>풋살</option>
+			<option class='content_input_text content_select_text' value='농구'>농구</option>
+			<option class='content_input_text content_select_text' value='배드민턴'>배드민턴</option>
+		</select>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>날짜</div>
+		<input type='date' class='content_input_text content_desc_text content_input1' id='data_input1' value='2022-08-27'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>시간</div>
+		<input type='time' class='content_input_text content_desc_text content_input2' id='time_input1' value='00:00' style='font-size: 32px;'></input>
+		<div class='content_text content_desc_text'>~</div>
+		<input type='time' class='content_input_text content_desc_text content_input2' id='time_input2' value='00:00' style='font-size: 32px;'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+	<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>MMR</div>
+		<input class='content_input_text content_desc_text content_input2' id='mmr_input1'></input>
+		<div class='content_text content_desc_text'>~</div>
+		<input class='content_input_text content_desc_text content_input2' id='mmr_input2'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>인원</div>
+		<input class='content_input_text content_desc_text content_input2' id='many_input1'></input>
+		<div class='content_text content_desc_text'>~</div>
+		<input class='content_input_text content_desc_text content_input2' id='many_input2'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>신청인원</div>
+		<input class='content_input_text content_desc_text content_input1' id='our_input1'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box' style='padding-left: 415px;'>
+		<a class='content_text content_desc_text content_button'>매칭하기</a>
+		<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>취소</a>
+	</div>
+	<div class='content_line'></div>
+</div>
+
+</body>
+
 </html>
