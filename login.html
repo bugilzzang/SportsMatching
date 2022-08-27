@@ -42,9 +42,15 @@
             <div class="findform">
                 <button class="findid" id="findid">아이디찾기</button>
                 <button class="findpw" id="findpw">비밀번호찾기</button>
-                <button class="signupgo" id="signupgo">회원가입</button>
+                <button class="signupgo" id="signupgo" onclick="goSignup()">회원가입</button>
             </div>
         </div>       
     </div>
 
 </body>
+
+<script>
+    function goSignup(){
+		window.location.href = "signup.html";
+	}
+</script>
