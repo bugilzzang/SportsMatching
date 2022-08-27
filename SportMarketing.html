@@ -1,6 +1,224 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .nav {
+            height: 70px;
+            border-bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right-items {
+            display: flex;
+            margin-left: auto;
+        }
+
+        .nav-item {
+            margin-left: 10px;
+        }
+
+        .nav-title {
+            font-size: 30px;
+            margin-left: 15px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 35px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin: 15px;
+
+        }
+
+
+        .contents {
+            height: 400px;
+            width: 1200px;
+            margin: 0 auto;
+
+        }
+
+        .contents a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .rbox {
+            float: left;
+            display: block;
+            width: 30%;
+            margin: 10px 1%;
+            border: 1px solid #ccc;
+            font-size: 10pt;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 2px 5px 2px rgb(150 153 159 / 20%);
+        }
+
+        .rname {
+            padding: 10px 15px;
+            font-size: 13pt;
+            border-bottom: 1px solid #ccc;
+            /* background: linear-gradient(#fff,#eee); */
+            color: #3366DD;
+        }
+
+        .rname strong {
+            color: #222;
+        }
+
+        .rlogo {
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        .rtext {
+            padding: 8px;
+            font-size: 14pt;
+            font-weight: bold;
+            color: #fff;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .site01 {
+            background: #e5564e;
+        }
+
+        .rtext2 {
+            padding: 20px;
+            font-size: 10pt;
+            letter-spacing: -0.55px;
+        }
+
+        .rtext3 {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 25px;
+        }
+
+        .rtext3 span {
+            /* background: linear-gradient(#fff, #eee); */
+            padding: 12px 16px;
+            border: 1px solid #fa8400;
+            border-radius: 2px;
+            box-sizing: border-box;
+            font-size: 11pt;
+            color: #fa8400;
+            font-weight: bold;
+            margin: 0 3px;
+        }
+
+        .bottom {
+            clear: both;
+            padding: 10px 0;
+            margin: 0 1%;
+            font-size: 8pt;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            color: #777;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-title"> 우리동네스포츠 </div>
+        <div class="nav-right-items">
+            <div class="nav-item">메뉴1</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="title">
+            우리동네스포츠 제휴사이트 목록
+        </div>
+        <div class="subtitle">
+            추천하는 이유 한줄
+        </div>
+
+
+
+        <div class="contents">
+            <div class="rbox" onclick="window.open('go/01,php')">
+                <div class="rname">
+                    <strong>
+                        <a href="https://www.nike.com/kr/ko_kr/">나이키</a>
+                    </strong>
+                </div>
+                <div class="rlogo">
+                    <img src="./img/nikelogo.jpeg" height="300" width="400" alt="Nike">
+                </div>
+
+                <div class="rtext site01"> 사이트 한줄 소개</div>
+                <div class="rtext2"> 사이트 장점1 </div>
+                <div class="rtext3">
+                    <span>바로가기</span>
+                </div>
+            </div>
+
+            <div class="contents">
+                <div class="rbox" onclick="window.open('go/01,php')">
+                    <div class="rname">
+                        <strong>
+                            <a
+                                href="https://www.adidas.co.kr/?cm_mmc=AdieSEM_google-_-ALWAYSON-_-Trademark-_-Trademark__%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4.-_-dv%3AeCom-_-cn%3AALWAYSON-_-pc%3Agoogle&cm_mmc1=KR&cm_mmc2=PPC-TM-CrossCategory-None-Exact-KR-APAC-eCom-Paid_Search&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2s9xSizts5IMC_HkL6m3NOzvLQUD8nUCI2BvPP5lPmQAjshfcyENbBoCJlkQAvD_BwE">아디다스</a>
+                        </strong>
+                    </div>
+                    <div class="rlogo">
+                        <img src="./img/adidaslogo.jpeg" height="300" width="400" alt="adidas">
+                    </div>
+
+                    <div class="rtext site01"> 사이트 한줄 소개</div>
+                    <div class="rtext2"> 사이트 장점1 </div>
+                    <div class="rtext3">
+                        <span>바로가기</span>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="rbox" onclick="window.open('go/01,php')">
+                        <div class="rname">
+                            <strong>
+                                <a
+                                    href="https://www.underarmour.co.kr/ko-kr/?cid=PS|KR|SA|Google|DES|P0006490|All|All|All|3012022|ADEF|&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2qY1vIiovGWECNYV51BvUDH1RjDXmzKLIk3kyyOTtRnuScCfxfLqYBoCDMIQAvD_BwE/">언더아머</a>
+                            </strong>
+                        </div>
+                        <div class="rlogo">
+                            <img src="./img/logotest.png" height="300" width="400" alt="underarmour">
+                        </div>
+
+                        <div class="rtext site01"> 사이트 한줄 소개</div>
+                        <div class="rtext2"> 사이트 장점1 </div>
+                        <div class="rtext3">
+                            <span>바로가기</span>
+                        </div>
+                    </div>
+
+
+                    <div class="bottom">
+                        "제휴 문의 000-0000-0000"
+                        <br>
+                        "제작 : 저지불가"
+                    </div>
+
+                    <script src="script.js"></script>
+                    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
 </html>
