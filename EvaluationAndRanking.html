@@ -7,37 +7,16 @@
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
-    .nav {
-      height: 70px;
-      border-bottom: 1px solid black;
-      display: flex;
-      align-items: center;
-    }
-
+    
     .ranking {
       margin-top: 50px;
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
-      color: #212529;
+      color: #3366DD;
     }
 
-    .evaluation-button {
-      margin-left: auto;
-    }
 
-    .delete-button {
-      margin-left: auto;
-    }
-
-    .nav-right-items {
-      display: flex;
-      margin-left: auto;
-    }
-
-    .nav-item {
-      margin-left: 10px;
-    }
 
     .company-name {
       margin-left: 20px;
@@ -47,16 +26,28 @@
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
-      color: #212529;
+      color: #3366DD;
     }
 
     .subtitle {
-      margin-top: 20px;
+      margin-top:20px;
       text-align: center;
-      font-size: 1.25rem font-weight: 300;
-      border: 1px solid black;
+      font-size: 1.25rem font-weight: 300;\
+         
+    }
+    
+    .table{
+      margin-top:5px;
+      text-align: center;
     }
 
+    .table-button{
+      color: #3366DD;
+      background-color: transparent;
+      background-image: none;
+      border-color: #007bff;
+    }
+    
     .main {
       width: 1000px;
       margin: 0 auto;
@@ -64,7 +55,7 @@
     }
 
     .rank {
-      margin-top: 50px;
+      margin-top: 10px;
       display: flex;
     }
 
@@ -75,11 +66,12 @@
       margin: 20px;
       border-radius: 4px;
       text-align: center;
+      
     }
 
     .rank-sportstype {
       font-size: 1.5rem;
-      background: rgba(0, 0, 0, .03);
+      background: #3366DD;
       height: 53px;
       line-height: 53px;
       border-bottom: 1px solid black;
@@ -96,7 +88,7 @@
       font-size: 1.25rem;
       line-height: 1.5;
       border-radius: 0.3rem;
-      color: #007bff;
+      color: #3366DD;
       background-color: transparent;
       background-image: none;
       border-color: #007bff;
@@ -106,120 +98,94 @@
 </head>
 
 <body>
-  <div class="nav">
-    <div class="company-name">
-      Evaluation Page
-    </div>
-    <div class="nav-right-items">
-      <div class="nav-item">Home</div>
-      <div class="nav-item">Board</div>
-      <div class="nav-item">Ranking</div>
-      <div class="nav-item">Community</div>
-    </div>
-  </div>
 
   <div class="main">
     <div class="title">
       유저평가
     </div>
-    <div class="subtitle">
-      (최근 매칭을 진행한 유저 목록)
-      <button class="evaluation-button">
+    <div class ="subtitle">
+      최근 매칭 유저 현황
+    </div>
+    
+    <div class = "table">
+    <div class = "table-item">
+      (최근 매칭한 내용)
+      <button class="table-button">
         평가하기
       </button>
-      <button class="delete-button">
+      <button class="table-button">
         삭제
       </button>
     </div>
-    <div class="subtitle">
-      (최근 매칭을 진행한 유저 목록)
-      <button class="evaluation-button">
+    <div class = "table-item">
+      (최근 매칭한 내용)
+      <button class="table-button">
         평가하기
       </button>
-      <button class="delete-button">
+      <button class="table-button">
         삭제
       </button>
     </div>
-    <div class="subtitle">
-      (최근 매칭을 진행한 유저 목록)
-      <button class="evaluation-button">
+    <div class = "table-item">
+      (최근 매칭한 내용)
+      <button class="table-button">
         평가하기
       </button>
-      <button class="delete-button">
+      <button class="table-button">
         삭제
       </button>
     </div>
+    </div>
+    
 
     <div class="ranking">
-      명예의 전당
-      <div class="radiobutton">
-        (라디오 버튼으로 운동 종류 선택)
-      </div>
+      APP VIP USER
     </div>
 
     <div class="rank">
-      <div class="rank-item">
+       <div class="rank-item">
         <div class="rank-sportstype">
-          축구공 아이콘
+          USER NAME
         </div>
         <div class="rank-onerinformation">
-          이름 / MMR
+          회원 프로필 사진
         </div>
         <div class="rank-onerdetailInformation">
-          회원 설명 정보 1
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 2
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 3
+          간단한 회원 설명 정보
         </div>
         <button class="chat-button">
-          Chating
+          회원 정보 더보기
+        </button>
+        </div>
+      
+      <div class="rank-item">
+        <div class="rank-sportstype">
+          USER NAME
+        </div>
+        <div class="rank-onerinformation">
+          회원 프로필 사진
+        </div>
+        <div class="rank-onerdetailInformation">
+          간단한 회원 설명 정보
+        </div>
+        <button class="chat-button">
+          회원 정보 더보기
         </button>
       </div>
+        
+      
       <div class="rank-item">
         <div class="rank-sportstype">
-          축구공 아이콘
+          USER NAME
         </div>
         <div class="rank-onerinformation">
-          이름 / MMR
+          회원 프로필 사진
         </div>
         <div class="rank-onerdetailInformation">
-          회원 설명 정보 1
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 2
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 3
+          간단한 회원 설명 정보
         </div>
         <button class="chat-button">
-          Chating
-        </button>
-      </div>
-
-
-
-
-      <div class="rank-item">
-        <div class="rank-sportstype">
-          축구공 아이콘
-        </div>
-        <div class="rank-onerinformation">
-          이름 / MMR
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 1
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 2
-        </div>
-        <div class="rank-onerdetailInformation">
-          회원 설명 정보 3
-        </div>
-        <button class="chat-button">
-          Chating
+          회원 정보 더보기
         </button>
       </div>
     </div>
