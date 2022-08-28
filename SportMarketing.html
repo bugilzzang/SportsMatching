@@ -7,11 +7,19 @@
     <title>replit</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
+        body {
+            margin: 0 0 0 0;
+            font-family: Arial;
+        }
+
         .nav {
-            height: 70px;
+            height: 125px;
+            width: 800px;
             border-bottom: 1px solid black;
             display: flex;
             align-items: center;
+            color: white;
+            background-color: #3366DD;
         }
 
         .nav-right-items {
@@ -24,8 +32,32 @@
         }
 
         .nav-title {
-            font-size: 30px;
+            font-size: 2.8rem;
+            font-align: center;
+            font-weight: bold;
             margin-left: 15px;
+            text-shadow: 4px 2px 2px gray;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 35px;
+            color: black;
+            background-color: white;
+            height: 3.5rem;
+            width: 800px;
+        }
+
+        .main-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin: 15px;
+            height: 1.25rem;
+            width: 800px;
+
         }
 
         .title {
@@ -45,16 +77,20 @@
 
         }
 
+        .main {
+            weight: 1000px;
+            margin-left: auto;
+        }
 
         .contents {
             height: 400px;
-            width: 1200px;
-            margin: 0 auto;
+            width: 850px;
+            margin-left: 0 auto;
 
         }
 
         .contents a {
-            color: black;
+            color: white;
             text-decoration: none;
         }
 
@@ -76,6 +112,7 @@
             border-bottom: 1px solid #ccc;
             /* background: linear-gradient(#fff,#eee); */
             color: #3366DD;
+            background-color: #3366DD;
         }
 
         .rname strong {
@@ -98,7 +135,7 @@
         }
 
         .site01 {
-            background: #e5564e;
+            background: #3366DD;
         }
 
         .rtext2 {
@@ -116,11 +153,11 @@
         .rtext3 span {
             /* background: linear-gradient(#fff, #eee); */
             padding: 12px 16px;
-            border: 1px solid #fa8400;
+            border: 1px solid #3366DD;
             border-radius: 2px;
             box-sizing: border-box;
             font-size: 11pt;
-            color: #fa8400;
+            color: black;
             font-weight: bold;
             margin: 0 3px;
         }
@@ -144,46 +181,68 @@
     </div>
 
     <div class="main">
-        <div class="title">
+        <div class="main-title">
             우리동네스포츠 제휴사이트 목록
         </div>
-        <div class="subtitle">
+        <div class="main-subtitle">
             추천하는 이유 한줄
         </div>
+    </div>
 
 
+
+    <div class="contents">
+        <div class="rbox">
+            <div class="rname">
+                <strong>
+                    <a href="https://www.nike.com/kr/ko_kr/">나이키</a>
+                </strong>
+            </div>
+            <div class="rlogo">
+                <img src="./img/nikelogo.jpeg" height="300" width="250" alt="Nike">
+            </div>
+
+            <div class="rtext site01"> Just Do It. </div>
+            <div class="rtext2"> 스포츠용품 1위 </div>
+            <div class="rtext3">
+                <span>
+                    바로가기
+                </span>
+            </div>
+        </div>
 
         <div class="contents">
-            <div class="rbox" onclick="window.open('go/01,php')">
+            <div class="rbox">
                 <div class="rname">
                     <strong>
-                        <a href="https://www.nike.com/kr/ko_kr/">나이키</a>
+                        <a
+                            href="https://www.adidas.co.kr/?cm_mmc=AdieSEM_google-_-ALWAYSON-_-Trademark-_-Trademark__%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4.-_-dv%3AeCom-_-cn%3AALWAYSON-_-pc%3Agoogle&cm_mmc1=KR&cm_mmc2=PPC-TM-CrossCategory-None-Exact-KR-APAC-eCom-Paid_Search&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2s9xSizts5IMC_HkL6m3NOzvLQUD8nUCI2BvPP5lPmQAjshfcyENbBoCJlkQAvD_BwE">아디다스</a>
                     </strong>
                 </div>
                 <div class="rlogo">
-                    <img src="./img/nikelogo.jpeg" height="300" width="380" alt="Nike">
+                    <img src="./img/adidaslogo.png" height="300" width="250" alt="adidas">
                 </div>
 
-                <div class="rtext site01"> Just Do It. </div>
-                <div class="rtext2"> 스포츠용품 1위 </div>
+                <div class="rtext site01"> Impossibe is Nothiong</div>
+                <div class="rtext2"> 사이트 장점 </div>
                 <div class="rtext3">
                     <span>바로가기</span>
                 </div>
             </div>
 
             <div class="contents">
-                <div class="rbox" onclick="window.open('go/01,php')">
+                <div class="rbox">
                     <div class="rname">
                         <strong>
                             <a
-                                href="https://www.adidas.co.kr/?cm_mmc=AdieSEM_google-_-ALWAYSON-_-Trademark-_-Trademark__%EC%95%84%EB%94%94%EB%8B%A4%EC%8A%A4.-_-dv%3AeCom-_-cn%3AALWAYSON-_-pc%3Agoogle&cm_mmc1=KR&cm_mmc2=PPC-TM-CrossCategory-None-Exact-KR-APAC-eCom-Paid_Search&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2s9xSizts5IMC_HkL6m3NOzvLQUD8nUCI2BvPP5lPmQAjshfcyENbBoCJlkQAvD_BwE">아디다스</a>
+                                href="https://www.underarmour.co.kr/ko-kr/?cid=PS|KR|SA|Google|DES|P0006490|All|All|All|3012022|ADEF|&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2qY1vIiovGWECNYV51BvUDH1RjDXmzKLIk3kyyOTtRnuScCfxfLqYBoCDMIQAvD_BwE/">언더아머</a>
                         </strong>
                     </div>
                     <div class="rlogo">
-                        <img src="./img/adidaslogo.png" height="300" width="350" alt="adidas">
+                        <img src="./img/underarmour.jpeg" height="300" width="250" alt="underarmour">
                     </div>
 
-                    <div class="rtext site01"> Impossibe is Nothiong</div>
+                    <div class="rtext site01"> 3대500이하 금지</div>
                     <div class="rtext2"> 사이트 장점 </div>
                     <div class="rtext3">
                         <span>바로가기</span>
@@ -191,33 +250,70 @@
                 </div>
 
                 <div class="contents">
-                    <div class="rbox" onclick="window.open('go/01,php')">
+                    <div class="rbox">
                         <div class="rname">
                             <strong>
-                                <a
-                                    href="https://www.underarmour.co.kr/ko-kr/?cid=PS|KR|SA|Google|DES|P0006490|All|All|All|3012022|ADEF|&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2qY1vIiovGWECNYV51BvUDH1RjDXmzKLIk3kyyOTtRnuScCfxfLqYBoCDMIQAvD_BwE/">언더아머</a>
+                                <a href="https://www.crazy11.co.kr/">크레이지11</a>
                             </strong>
                         </div>
                         <div class="rlogo">
-                            <img src="./img/underarmour.jpeg" height="300" width="350" alt="underarmour">
+                            <img src="./img/crazy11logo.jpng.png" height="300" width="250" alt="crazy11">
                         </div>
-
-                        <div class="rtext site01"> 3대500이하 금지</div>
-                        <div class="rtext2"> 사이트 장점 </div>
+                        <div class="rtext site01"> Crazy11 </div>
+                        <div class="rtext2"> 축구화 16년 연속 판매 1위 </div>
                         <div class="rtext3">
                             <span>바로가기</span>
                         </div>
                     </div>
 
+                    <div class="contents">
+                        <div class="rbox">
+                            <div class="rname">
+                                <strong>
+                                    <a
+                                        href="https://www.jujusports.co.kr/?NaPm=ct%3Dl7db6wjz%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D6a8a0b91a0ca723b98054866a73806cab88710d7">주주스포츠</a>
+                                </strong>
+                            </div>
+                            <div class="rlogo">
+                                <img src="./img/jujulogo.png" height="300" width="250" alt="juju">
+                            </div>
 
-                    <div class="bottom">
-                        "제휴 문의 000-0000-0000"
-                        <br>
-                        "제작 : 저지불가"
-                    </div>
+                            <div class="rtext site01"> 주주스포츠</div>
+                            <div class="rtext2"> 사이트 장점 </div>
+                            <div class="rtext3">
+                                <span>바로가기</span>
+                            </div>
+                        </div>
 
-                    <script src="script.js"></script>
-                    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+                        <div class="contents">
+                            <div class="rbox">
+                                <div class="rname">
+                                    <strong>
+                                        <a
+                                            href="https://www.ssaka.com/?NaPm=ct%3Dl7db7tsg%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Dd096a111d07e5b65f1293138524fa8eb2d2e39d0">싸카닷컴</a>
+                                    </strong>
+                                </div>
+                                <div class="rlogo">
+                                    <img src="./img/ssakalogo.png" height="300" width="250" alt="ssaka">
+                                </div>
+
+                                <div class="rtext site01"> 싸카닷컴</div>
+                                <div class="rtext2"> 사이트 장점 </div>
+                                <div class="rtext3">
+                                    <span>바로가기</span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="bottom">
+                                "제휴 문의 000-0000-0000"
+                                <br>
+                                "제작 : 저지불가"
+                            </div>
+
+                            <script src="script.js"></script>
+                            <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 </body>
 
 </html>

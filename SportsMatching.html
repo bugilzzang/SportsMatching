@@ -2,29 +2,29 @@
 
 <style>
 body {
-	background-color: #222222;
+	background-color: #FBFBFB;
 	margin: 0 0 0 0;
 	font-family: Arial;
 }
 
 .content_text {
-	color: #FFFFFF;
+	color: #000000;
 }
 .menu_text {
-	color: #CCCCCC;
+	color: #FFFFFF;
 }
 .link_text {
 	color: #00C2EE;
 }
 
 #title_area {
-	height: 150px;
-	background-color: #333333;
+	height: 125px;
 	padding: 25px 50px 0 50px;
-	line-height: 125px;
+	line-height: 100px;
+	background-color: #3366DD;
 }
 #content_area {
-	padding: 100px 33px 0 33px;
+	padding: 50px 33px 0 33px;
 }
 
 #title_text {
@@ -43,7 +43,9 @@ body {
 .content_title_text {
 	font-size: 48px;
 	font-weight: bold;
-	margin-bottom: 60px;
+	text-align: center;
+	margin: 40px 0 60px 10px;
+	display: inline-block;
 }
 .content_desc_text {
 	font-size: 42px;
@@ -51,28 +53,30 @@ body {
 }
 .content_box {
 	padding: 30px 0 30px 0;
-	background-color: #2A2A2A;
+	background-color: #3366DD1D;
 }
 .content_input1 {
-	background-color: #333333;
+	background-color: #FAFAFA;
 	width: 300px;
 	height: 60px;
 	margin: 0 30px 0 30px;
 	border-radius: 12px;
 	text-align: center;
 	border: 3px solid #999999;
+	line-height: 60px;
 }
 .content_input2 {
-	background-color: #333333;
+	background-color: #FAFAFA;
 	width: 250px;
 	height: 60px;
 	margin: 0 30px 0 30px;
 	border-radius: 12px;
 	text-align: center;
 	border: 3px solid #999999;
+	line-height: 60px;
 }
 .content_input_text {
-	color: #FFFFFF;
+	color: #000000;
 }
 .content_button {
 	width: 200px;
@@ -80,17 +84,21 @@ body {
 	line-height: 100px;
 	text-align: center;
 	text-decoration: none;
-	border: 5px solid #00A3E5;
+	background-color: #4286F5;
+	border: 2px solid #458BFA;
+	color: #FFFFFF;
+	font-size: 36px;
 }
 .content_desc_head {
 	width: 180px;
 	margin-left: 8px;
+	font-weight: bold;
 }
 .content_select_text {
 	font-size: 14px;
 }
 .content_line {
-	border-top: 5px solid #333333;
+	border-top: 3px solid #3366DD2C;
 }
 .content_image {
 	width: 42px;
@@ -114,31 +122,33 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 </style>
 
 <head>
+<meta name='viewport' content='user-scalable=0'>
 <title>Sports Matching - </title>
 </head>
 
 <body>
 
 <div id='title_area'>
-	<a href='SportsMatching.html' class='content_text' id='title_text'>Sports Matching</a>
+	<a href='SportsMatching.html' class='menu_text' id='title_text'>Sports Matching</a>
 	
 	<!--DEFAULT NO LOGIN STATE-->
 	<div id='login_status'>
-		<a class='menu_button content_text'>로그인</a>
+		<a class='menu_button menu_text'>로그인</a>
 	</div>
 </div>
 
 <div id='content_area'>
+	<div class='content_image' style='width: 60px; height: 60px; background-image:url(./images/note_img.png); display: inline-block;'></div>
 	<div class='content_text content_title_text'>운동 매칭하기</div>
-	<div class='content_line'></div>
+	<div class='content_line' style='border-top: 3px solid #999999;'></div>
 	<div class='content_box'>
 		<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
 		<div class='content_text content_desc_text content_desc_head'>종목</div>
 		<select class='content_input_text content_desc_text content_input1' id='kind_input'>
 			<option class='content_input_text content_select_text' value='축구'>축구</option>
-			<option class='content_input_text content_select_text' value='풋살'>풋살</option>
 			<option class='content_input_text content_select_text' value='농구'>농구</option>
-			<option class='content_input_text content_select_text' value='배드민턴'>배드민턴</option>
+			<option class='content_input_text content_select_text' value='테니스'>테니스</option>
+			<option class='content_input_text content_select_text' value='헬스'>헬스</option>
 		</select>
 	</div>
 	<div class='content_line'></div>
@@ -157,7 +167,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	</div>
 	<div class='content_line'></div>
 	<div class='content_box'>
-	<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
+		<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
 		<div class='content_text content_desc_text content_desc_head'>MMR</div>
 		<input class='content_input_text content_desc_text content_input2' id='mmr_input1'></input>
 		<div class='content_text content_desc_text'>~</div>
@@ -178,11 +188,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 		<input class='content_input_text content_desc_text content_input1' id='our_input1'></input>
 	</div>
 	<div class='content_line'></div>
-	<div class='content_box' style='padding-left: 415px;'>
+	<div class='content_box' style='padding-left: 450px;'>
 		<a class='content_text content_desc_text content_button'>매칭하기</a>
-		<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>취소</a>
+		<a class='content_text content_desc_text content_button' style='margin-left: 35px; background-color: #FFFFFF; color: #000000; border: 2px solid #888888;'>취소</a>
 	</div>
-	<div class='content_line'></div>
+	<div class='content_line' style='border-top: 3px solid #999999;'></div>
 </div>
 
 </body>
