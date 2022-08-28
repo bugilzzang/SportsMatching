@@ -1,0 +1,293 @@
+<html>
+
+<style>
+body {
+	background-color: #FBFBFB;
+	margin: 0 0 0 0;
+	font-family: Arial;
+}
+
+.content_text {
+	color: #000000;
+}
+.menu_text {
+	color: #FFFFFF;
+}
+.link_text {
+	color: #00C2EE;
+}
+
+#title_area {
+	height: 125px;
+	background-color: #3366DD;
+	padding: 25px 50px 0 50px;
+	line-height: 100px;
+}
+#content_area {
+	padding: 50px 33px 0 33px;
+}
+
+#title_text {
+	font-size: 64px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.menu_button {
+	font-size: 36px;
+}
+
+#login_status {
+	float: right;
+	margin-top: 10px;
+}
+.content_title_text {
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 60px;
+	text-align: center;
+	margin-top: 40px;
+}
+.content_desc_text {
+	font-size: 30px;
+	display: inline-block;
+}
+.content_box {
+	padding: 15px 0 15px 0;
+	display: inline-block;
+}
+.content_input1 {
+	background-color: #3366DD0B;
+	width: 225px;
+	height: 50px;
+	margin: 0 30px 0 30px;
+	border-radius: 12px;
+	text-align: center;
+	line-height: 50px;
+}
+.content_input2 {
+	background-color: #3366DD0B;
+	width: 200px;
+	height: 50px;
+	margin: 0 30px 0 30px;
+	border-radius: 12px;
+	text-align: center;
+	line-height: 50px;
+}
+.content_input_text {
+	color: #000000;
+}
+.content_button {
+	width: 200px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #4286F5;
+	border: 5px solid #458BFA;
+	color: #FFFFFF;
+	font-size: 36px;
+}
+.content_desc_head {
+	width: 125px;
+	font-weight: bold;
+	margin-left: 8px;
+}
+.content_select_text {
+	font-size: 14px;
+}
+.content_line {
+	border-top: 5px solid #E0E0E0;
+}
+.content_image {
+	width: 42px;
+	height: 42px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	display: inline-block;
+	margin-left: 10px;
+	line-height: 28px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+   background: url(./images/date_img.png) no-repeat;
+   width: 42px;
+   height: 42px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+   background: url(./images/clock_img.png) no-repeat;
+   width: 42px;
+   height: 42px;
+}
+.item_box {
+	border: 1px solid #999999;
+	background-color: #3366DD1D;
+	margin: 50px 0 50px 0;
+	padding: 15px 0 15px 8px;
+}
+</style>
+
+<head>
+<meta name='viewport' content='user-scalable=0'>
+<title>Sports Matching - </title>
+</head>
+
+<body>
+
+<div id='title_area'>
+	<a href='SportsMatching.html' class='menu_text' id='title_text'>Sports Matching</a>
+	
+	<!--DEFAULT NO LOGIN STATE-->
+	<div id='login_status'>
+		<a class='menu_button menu_text'>로그인</a>
+	</div>
+</div>
+
+<div id='content_area'>
+	<div class='content_text content_title_text'>나의 매칭현황</div>
+	<div class='item_box'>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>종목</div>
+			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>날짜</div>
+			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>시간</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>MMR</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>인원</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
+		</div>
+		<div class='content_box' style='padding-left: 625px;'>
+			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
+			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭취소</a>
+		</div>
+	</div>
+	
+	<div class='item_box'>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>종목</div>
+			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>날짜</div>
+			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>시간</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>MMR</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>인원</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
+		</div>
+		<div class='content_box' style='padding-left: 625px;'>
+			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
+			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭취소</a>
+		</div>
+	</div>
+	
+	<div class='item_box'>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>종목</div>
+			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>날짜</div>
+			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>시간</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>MMR</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>인원</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
+			<div class='content_text content_desc_text'>~</div>
+			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
+		</div>
+		<div class='content_box'>
+			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
+			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
+		</div>
+		<div class='content_box' style='padding-left: 625px;'>
+			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
+			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭취소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
