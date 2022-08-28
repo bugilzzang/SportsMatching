@@ -1,5 +1,5 @@
 body {
-	background-color: #222222;
+	
 	margin: 0 0 0 0;
 	font-family: Arial;
 }
@@ -9,16 +9,13 @@ h1,h2,h3{
 	color: #666;
 	font-weight: bold;
 	font-size: 15px;
-	-webkit-transition: all 0.1s linear;
-	-moz-transition: all 0.1s linear;
-	transition: all 0.1s linear;
-    border-bottom: 1px solid black;
+    border-bottom: 4px solid white;
     padding-bottom : 5px;
 }
 
 #title_area {
 	height: 80px;
-	background-color: #333333;
+	background-color: #3366DD;
 	line-height: 80px;
     align-items: center;
     text-align: center;
@@ -26,6 +23,7 @@ h1,h2,h3{
 
 .content_text {
 	color: #FFFFFF;
+    text-decoration: none;
 }
 #title_text {
 	font-size: 30px;
@@ -52,7 +50,7 @@ h1,h2,h3{
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-    background-color: blanchedalmond;
+    background-color: #3366dd1d;
     text-align: center;
 }
 .row{
@@ -75,14 +73,19 @@ h1,h2,h3{
 .loginbtn{
     width : 33.33%;
     height : 50px;
-    
-    margin-bottom : 10px;
+    border : none;
+    background-color: #3366DD;
+    color : white;
+    font-weight: bold;
+    border-radius : 9px;
+    margin-top : 28px;
+    margin-bottom : 5px;
 }
 
 .findid, .findpw, .signupgo{
     margin-left : 20px;
     margin-top : 30px;
-    background-color : aliceblue;
+    background-color : white;
     border : none;
     font-weight: bold;
 }
@@ -93,8 +96,7 @@ h1,h2,h3{
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-    background-color: rgb(255, 255, 237);
-    
+    background-color: #3366dd1d;
 }
 .signupform-group{
     width : 300px;
@@ -115,6 +117,11 @@ h1,h2,h3{
     margin-left : 33.33%;
     margin-bottom : 10px;
     margin-top : 40px;
+    border : none;
+    background-color: #3366DD;
+    color : white;
+    font-weight: bold;
+    border-radius : 9px;
 }
 
 .content_image {
@@ -131,10 +138,11 @@ h1,h2,h3{
     width : 33.33%;
     height : 40px;
     margin-left : 33.33%;
-    margin-bottom : 10px;
-    margin-top : 40px;
-    font-weight: bold;
-    text-emphasis-color: rgb(245, 93, 93);
-    text-decoration-color: rgb(245, 93, 93);
-    background-color: rgb(254, 165, 110);
+    margin-bottom : 50px;
+    margin-top : 300px;
+    background-color: rgba(225, 48, 48, 0.89);;
+    border : none;
+    border-radius: 8px ;
+    color : white;
+    font-weight : bold;
 }
