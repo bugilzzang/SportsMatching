@@ -129,7 +129,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <body>
 
 <div id='title_area'>
-	<a href='SportsMatching.html' class='menu_text' id='title_text'>Sports Matching</a>
+	<a href='./MAIN.html' class='menu_text' id='title_text'>Sports Matching</a>
 	
 	<!--DEFAULT NO LOGIN STATE-->
 	<div id='login_status'>
@@ -155,7 +155,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	<div class='content_box'>
 		<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
 		<div class='content_text content_desc_text content_desc_head'>날짜</div>
-		<input type='date' class='content_input_text content_desc_text content_input1' id='data_input1' value='2022-08-27'></input>
+		<input type='date' class='content_input_text content_desc_text content_input1' id='date_input' value='2022-08-27'></input>
 	</div>
 	<div class='content_line'></div>
 	<div class='content_box'>
@@ -185,7 +185,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	<div class='content_box'>
 		<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
 		<div class='content_text content_desc_text content_desc_head'>신청인원</div>
-		<input class='content_input_text content_desc_text content_input1' id='our_input1'></input>
+		<input class='content_input_text content_desc_text content_input1' id='our_input'></input>
 	</div>
 	<div class='content_line'></div>
 	<div class='content_box' style='padding-left: 450px;'>
@@ -203,14 +203,36 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 function matching ()
 {
+	var owner = "대충왕멋진닉네임"
+	var kind = kind_input.value;
+	var date = date_input.value;
+	var time1 = time_input1.value;
+	var time2 = time_input2.value;
+	var mmr1 = mmr_input1.value;
+	var mmr2 = mmr_input2.value;
+	var many1 = many_input1.value;
+	var many2 = many_input2.value;
+	var our = our_input.value;
+	
     $.ajax ( {
         url: "./matching_request.jsp",
         method: "POST",
-        data: { d: 3 },
+        data: { owner: owner, kind: kind, date: date, time1: time1, time2: time2, mmr1: mmr1, mmr2: mmr2, many1: many1, many2: many2, our: our },
         dataType: "text",
-        success: (data) => { console.log("성공"); }
+        success: (data) => {
+        	if (data.trim() == "성공")
+        	{
+        		alert("매칭 등록에 성공했습니다.");
+        	}
+        	else
+        	{
+        		alert("매칭 등록에 실패했습니다.");
+        	}
+        },
+        error: () => {
+        	
+        }
     })
-    console.log("버튼 DEBUG");
 }
 </script>
 
