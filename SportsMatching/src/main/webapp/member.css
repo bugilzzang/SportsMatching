@@ -1,0 +1,190 @@
+body {
+	
+	margin: 0 0 0 0;
+	font-family: Arial;
+}
+h1,h2,h3{
+    text-align: center;
+    text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+    border-bottom: 4px solid white;
+    padding-bottom : 5px;
+}
+
+#title_area {
+	height: 80px;
+	background-color: #3366DD;
+	line-height: 80px;
+    align-items: center;
+    text-align: center;
+}
+
+.content_text {
+	color: #FFFFFF;
+    text-decoration: none;
+}
+#title_text {
+	font-size: 30px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.menu_button {
+	font-size: 20px;
+}
+#login_status {
+	float: right;
+	margin-right : 9px;
+}
+
+
+
+
+.logform{
+    margin-top: 45px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-bottom: 50px;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    background-color: #3366dd1d;
+    text-align: center;
+}
+.row{
+    margin : auto;
+    width : 100%;
+    margin : 1px;
+    padding : 5px;
+}
+.form-group{
+    width : 50%;
+    height : 50px;
+    margin : auto;
+    padding-top: 10px;
+}
+.forminfo{
+    float : right;
+    width : 200px;
+    height : 30px;
+}
+.loginbtn{
+    width : 33.33%;
+    height : 50px;
+    border : none;
+    background-color: #3366DD;
+    color : white;
+    font-weight: bold;
+    border-radius : 9px;
+    margin-top : 28px;
+    margin-bottom : 5px;
+}
+
+.findid, .findpw, .signupgo{
+    margin-left : 20px;
+    margin-top : 30px;
+    background-color : white;
+    border : none;
+    font-weight: bold;
+}
+
+
+.signupform{
+    margin: 45px 7px 0px 7px;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    background-color: #3366dd1d;
+}
+.signupform-group{
+    width : 300px;
+    height : 50px;
+    margin : auto;
+    padding-top: 10px;
+}
+.signuplabel{
+    float : left;
+    width : 80px;
+    height : 30px;
+    margin-right: 5px;
+    font-size : 12px;
+}
+.signupbtn{
+    width : 33.33%;
+    height : 40px;
+    margin-left : 33.33%;
+    margin-bottom : 10px;
+    margin-top : 40px;
+    border : none;
+    background-color: #3366DD;
+    color : white;
+    font-weight: bold;
+    border-radius : 9px;
+}
+
+.content_image {
+	width: 42px;
+	height: 42px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	display: inline-block;
+	margin-left: 10px;
+	line-height: 28px;
+}
+
+.withdrawbtn{
+    width : 33.33%;
+    height : 40px;
+    margin-left : 33.33%;
+    margin-bottom : 50px;
+    margin-top : 300px;
+    background-color: rgba(225, 48, 48, 0.89);;
+    border : none;
+    border-radius: 8px ;
+    color : white;
+    font-weight : bold;
+}
+
+.goChating {
+	width: 25%;
+	height: 110px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	display: inline-block;
+	margin-left: 60px;
+    margin-top : 30px;
+	line-height: 28px;
+    text-align: center;
+}
+
+.go_ratingpage{
+    float: right;
+    width : 110px;
+    height : 110px;
+    text-align: center;
+    margin-left : 30px;
+    margin-top : 30px;
+}
+
+
+.start_matching{
+    width : 100%;
+    height : 110px;
+    text-align: center;
+    margin-right : 0px;
+    margin-top : 75px;
+}
+
+
+
+.go_marketing{
+    width : 150px;
+    align-items: center;
+    text-align: center;
+    margin-right : 0px;
+    margin-top : 60px;
+    margin-left : 123px;
+}
+

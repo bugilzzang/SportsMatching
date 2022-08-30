@@ -122,7 +122,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 </style>
 
 <head>
-<meta name='viewport' content='user-scalable=0'>
+<meta charset='utf-8' name='viewport' content='user-scalable=0'>
 <title>Sports Matching - </title>
 </head>
 
@@ -199,6 +199,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
+
+
 function matching ()
 {
     $.ajax ( {
@@ -206,7 +208,7 @@ function matching ()
         method: "POST",
         data: { d: 3 },
         dataType: "text",
-        success: () => { console.log("성공"); }
+        success: (data) => { console.log("성공"); }
     })
     console.log("버튼 DEBUG");
 }

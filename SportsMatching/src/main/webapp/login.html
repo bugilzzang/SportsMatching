@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title>SM LOGIN PAGE</title>
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="member.css">
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <div id='title_area'>
+        <a href='login.html' class='content_text' id='title_text'>Sports Matching</a>
+    </div>
+
+
+    <div class="logform">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="loginrow">
+                    <h1>우리동네 스포츠 로그인</h1>
+                </div>
+            </div>
+
+            
+
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <input type="text" name="userid" id="userid" class="forminfo" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="userpw" id="userpw" class="forminfo" placeholder="PASSWORD">
+                </div>
+            </div>
+        </div>
+        <div class="panel-btn">
+            <div class="row">
+                <button class="loginbtn" id="loginbtn">로그인</button>
+            </div>            
+        </div>
+    </div>
+
+    <div class="signform">
+        <div class="row">
+            <div class="findform">
+                <button class="findid" id="findid">아이디찾기</button>
+                <button class="findpw" id="findpw">비밀번호찾기</button>
+                <button class="signupgo" id="signupgo" onclick="goSignup()">회원가입</button>
+            </div>
+        </div>       
+    </div>
+
+</body>
+
+<script>
+    function goSignup(){
+		window.location.href = "signup.html";
+	}
+</script>
