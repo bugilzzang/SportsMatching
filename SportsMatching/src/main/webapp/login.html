@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>SM LOGIN PAGE</title>
-    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name=viewport charset='utf-8' content="width=device-width, initial-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="member.css">
     <style type="text/css">
 
@@ -56,7 +56,15 @@
 </body>
 
 <script>
-    function goSignup(){
-		window.location.href = "signup.html";
-	}
+	
+	$('#loginbtn').click(function(){
+		var userid = $("#userid").val();
+		var userpw = $("#userpw").val();
+				
+		$.ajax ({
+			type : "post",
+			url : "./login_request.jsp",
+			
+		})
+	})
 </script>
