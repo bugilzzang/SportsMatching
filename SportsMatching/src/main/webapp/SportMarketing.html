@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!-- 경진대회용 예시 파일 -->
 
 <head>
     <meta charset="utf-8">
@@ -15,16 +16,29 @@
         .nav {
             height: 125px;
             width: 800px;
-            border-bottom: 1px solid black;
             display: flex;
             align-items: center;
             color: white;
             background-color: #3366DD;
         }
 
+        button {
+            width: 60px;
+            height: 40px;
+            color: black;
+            background: white;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 7px;
+            border: lpx color:#3366DD;
+            left: 50%;
+            top: 50%;
+            display: inline;
+        }
+
         .nav-right-items {
             display: flex;
-            margin-left: auto;
+            margin-left: 400px;
         }
 
         .nav-item {
@@ -38,6 +52,7 @@
             margin-left: 15px;
             text-shadow: 4px 2px 2px gray;
         }
+
 
         .main-title {
             text-align: center;
@@ -69,13 +84,6 @@
             background-color: black;
         }
 
-        .subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin: 15px;
-
-        }
 
         .main {
             weight: 1000px;
@@ -178,14 +186,16 @@
 <body>
     <div class="nav">
         <div class="nav-title"> 우리동네스포츠 </div>
+        <div class=" nav-right-items">
+            <div class="nav-item">
+                <button type="botton" onclick="location.href='MAIN.html'">HOME </button>
+            </div>
+        </div>
     </div>
 
     <div class="main">
         <div class="main-title">
             우리동네스포츠 제휴사이트 목록
-        </div>
-        <div class="main-subtitle">
-            추천하는 이유 한줄
         </div>
     </div>
 
@@ -257,7 +267,7 @@
                             </strong>
                         </div>
                         <div class="rlogo">
-                            <img src="./images/crazy11logo.jpng.png" height="300" width="250" alt="crazy11">
+                            <img src="./images/crazy11logo.png" height="300" width="250" alt="crazy11">
                         </div>
                         <div class="rtext site01"> Crazy11 </div>
                         <div class="rtext2"> 축구화 16년 연속 판매 1위 </div>
