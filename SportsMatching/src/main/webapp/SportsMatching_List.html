@@ -126,7 +126,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 </style>
 
 <head>
-<meta name='viewport' content='user-scalable=0'>
+<meta charset='utf-8' name='viewport' content='user-scalable=0'>
 <title>Sports Matching - </title>
 </head>
 
@@ -144,151 +144,130 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <div id='content_area'>
 	<div class='content_image' style='width: 60px; height: 60px; background-image:url(./images/play_img.png); display: inline-block;'></div>
 	<div class='content_text content_title_text'>매칭목록</div>
-	<div class='item_box'>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>종목</div>
-			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>날짜</div>
-			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>시간</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>MMR</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>인원</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
-		</div>
-		<div class='content_box' style='padding-left: 625px;'>
-			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
-			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭하기</a>
-		</div>
-	</div>
-	
-	<div class='item_box'>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>종목</div>
-			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>날짜</div>
-			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>시간</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>MMR</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>인원</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
-		</div>
-		<div class='content_box' style='padding-left: 625px;'>
-			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
-			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭하기</a>
-		</div>
-	</div>
-	
-	<div class='item_box'>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>종목</div>
-			<a class='content_input_text content_desc_text content_input1' id='kind_input'>축구</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/date_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>날짜</div>
-			<a class='content_input_text content_desc_text content_input1' id='data_input1'>2022-08-27</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>시간</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>오전 12:00</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>오전 12:00</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>MMR</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>1000</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>1350</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/many_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>인원</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input1'>4</a>
-			<div class='content_text content_desc_text'>~</div>
-			<a class='content_input_text content_desc_text content_input2' id='many_input2'>5</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>신청인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>2</a>
-		</div>
-		<div class='content_box'>
-			<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
-			<div class='content_text content_desc_text content_desc_head'>모인인원</div>
-			<a class='content_input_text content_desc_text content_input1' id='our_input1'>4</a>
-		</div>
-		<div class='content_box' style='padding-left: 625px;'>
-			<!--<a class='content_text content_desc_text content_button'>매칭하기</a>-->
-			<a class='content_text content_desc_text content_button' style='margin-left: 35px;'>매칭하기</a>
-		</div>
-	</div>
 </div>
 
 </body>
+
+<script src='./js/jquery-3.6.1.min.js'></script>
+<script>
+
+$(document).ready(() => { 
+	
+	var owner = "안멋진닉네임";
+	
+	$.ajax ( {
+        url: "./matching_list.jsp",
+        method: "POST",
+        data: { owner: owner },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "실패")
+        	{
+        		alert("서비스 접근에 실패했습니다.");
+        	}
+        	else
+        	{
+        		console.log(data);
+        		var target = JSON.parse(data);
+        		var tags = "";
+        		
+        		for (var i = 0; i < target.kind.length; i++)
+        		{
+        			tags += "<div class='item_box'>";
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/kind_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>종목</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input1' id='kind_input'>" + target.kind[i] + "</a>";
+        			tags += "</div>";
+        			
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/date_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>날짜</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input1' id='data_input1'>" + target.date[i] + "</a>";
+        			tags += "</div>";
+        			
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/clock_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>시간</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='time_input1' style='font-size: 32px;'>" + target.time1[i] + "</a>";
+        			tags += "<div class='content_text content_desc_text'>~</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='time_input2' style='font-size: 32px;'>" + target.time2[i] + "</a>";
+        			tags += "</div>";
+        			
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/medal_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>MMR</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='mmr_input1'>" + target.mmr1[i] + "</a>";
+        			tags += "<div class='content_text content_desc_text'>~</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='mmr_input2'>" + target.mmr2[i] + "</a>";
+        			tags += "</div>";
+        			
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/many_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>인원</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='many_input1'>" + target.many1[i] + "</a>";
+        			tags += "<div class='content_text content_desc_text'>~</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input2' id='many_input2'>" + target.many2[i] + "</a>";
+        			tags += "</div>";
+        			
+        			/*
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/our_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>신청인원</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input1' id='our_input1'>" + target.our[i] + "</a>";
+        			tags += "</div>";
+        			*/
+        			
+        			tags += "<div class='content_box'>";
+        			tags += "<div class='content_image' style='background-image:url(./images/our_img.png);'></div>";
+        			tags += "<div class='content_text content_desc_text content_desc_head'>모인인원</div>";
+        			tags += "<a class='content_input_text content_desc_text content_input1' id='our_input1'>" + target.our[i] + "</a>";
+        			tags += "</div>";
+        			
+        			tags += "<div class='content_box' style='padding-left: 625px;'>";
+        			tags += "<a class='content_text content_desc_text content_button' style='margin-left: 35px;' onclick='JoinMatching(" + target.no[i] + ")'>매칭하기</a>";
+        			tags += "</div>";
+        			tags += "</div>";
+    			}
+        		
+        		$("#content_area").html($("#content_area").html() + tags);
+        	}
+        },
+        error: () => {
+        	
+        }
+    })
+    
+});
+
+function JoinMatching(no)
+{
+	var owner = "안멋진닉네임";
+	
+    $.ajax ( {
+        url: "./matching_join.jsp",
+        method: "POST",
+        data: { no: no, owner: owner },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "성공")
+        	{
+        		alert("매칭 참여에 성공했습니다.");
+        	}
+        	else if (data.trim() == "이미")
+        	{
+        		alert("이미 참여한 매칭입니다.");
+        	}
+        	else
+        	{
+        		alert("매칭 참여에 실패했습니다.");
+    		}
+        },
+        error: () => {
+        	
+        }
+    })
+}
+</script>
 
 </html>

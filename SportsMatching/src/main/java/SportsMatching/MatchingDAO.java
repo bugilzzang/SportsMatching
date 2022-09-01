@@ -1,6 +1,9 @@
 package SportsMatching;
 
 import java.sql.*;
+import java.util.ArrayList;
+
+import org.json.simple.*;
 
 public class MatchingDAO {
 
@@ -28,6 +31,164 @@ public class MatchingDAO {
 			
 			state.close();
 			return "성공";
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String GetMatchingList(String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			String query = "select * from matching where _owner!='" + owner + "';";
+			
+			ResultSet result = state.executeQuery(query);
+			
+			JSONObject json = new JSONObject();
+			ArrayList nos = new ArrayList();
+			ArrayList kinds = new ArrayList();
+			ArrayList dates = new ArrayList();
+			ArrayList times1 = new ArrayList();
+			ArrayList times2 = new ArrayList();
+			ArrayList mmrs1 = new ArrayList();
+			ArrayList mmrs2 = new ArrayList();
+			ArrayList manys1 = new ArrayList();
+			ArrayList manys2 = new ArrayList();
+			ArrayList ours = new ArrayList();
+			
+			while (result.next())
+			{
+				nos.add(result.getString(1));
+				kinds.add(result.getString(3));
+				dates.add(result.getString(4));
+				times1.add(result.getString(5));
+				times2.add(result.getString(6));
+				
+				mmrs1.add(result.getInt(7));
+				mmrs2.add(result.getInt(8));
+				manys1.add(result.getInt(9));
+				manys2.add(result.getInt(10));
+				ours.add(result.getInt(11));
+			}
+			
+			json.put("no", nos);
+			json.put("kind", kinds);
+			json.put("date", dates);
+			json.put("time1", times1);
+			json.put("time2", times2);
+			json.put("mmr1", mmrs1);
+			json.put("mmr2", mmrs2);
+			json.put("many1", manys1);
+			json.put("many2", manys2);
+			json.put("our", ours);
+			
+			state.close();
+			return json.toJSONString();
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String Join(String no, String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			if (state.executeQuery("select _owner from matching_my where _no=" + no + " and _owner='" + owner + "'").next())
+			{
+				state.close();
+				
+				return "이미";
+			}
+			
+			state.close();
+			
+			state = conn.createStatement();
+			
+			String query = "insert into matching_my values(0,'";
+			query += owner + "',";
+			query += no + ");";
+			
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			state = conn.createStatement();
+			
+			query = "update matching set _our=_our+1 where _no=" + no;
+			
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			return "성공";
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String GetMatchingMy()
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			String query = "select * from matching;";
+			
+			ResultSet result = state.executeQuery(query);
+			
+			JSONArray array = new JSONArray();
+			String kinds = "{시작";
+			String dates = "{시작";
+			String times1 = "{시작";
+			String times2 = "{시작";
+			String mmrs1 = "{시작";
+			String mmrs2 = "{시작";
+			String manys1 = "{시작";
+			String manys2 = "{시작";
+			String ours = "{시작";
+			
+			while (result.next())
+			{
+				kinds += ", " + result.getString(2);
+				dates += ", " + result.getString(3);
+				times1 += ", " + result.getString(4);
+				times2 += ", " + result.getString(5);
+				
+				mmrs1 += ", " + result.getInt(6);
+				mmrs2 += ", " + result.getInt(7);
+				manys1 += ", " + result.getInt(8);
+				manys2 += ", " + result.getInt(9);
+				ours += ", " + result.getInt(10);
+			}
+			
+			kinds += "}";
+			dates += "}";
+			times1 += "}";
+			times2 += "}";
+			mmrs1 += "}";
+			mmrs2 += "}";
+			manys1 += "}";
+			manys2 += "}";
+			ours += "}";
+			
+			state.close();
+			return array.toJSONString();
 		}
 		catch (Exception e)
 		{
