@@ -37,6 +37,5 @@ public class ChatDTO {
 	}
 	public void setChatTime(String chatTime) {
 		this.chatTime = chatTime;
-	}
-	
+	}	
 }
