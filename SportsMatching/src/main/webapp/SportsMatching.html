@@ -200,8 +200,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
 
+$(document).ready(() => { 
+	var d = new Date();
+	date_input.value = d.getFullYear() + "-" + (d.getMonth() + 1).toString().padStart(2, "0") + "-" + d.getDate().toString().padStart(2, "0");
+	time_input1.value = d.getHours() + ":" + d.getMinutes();
+	time_input2.value = d.getHours() + ":" + d.getMinutes();
+})
 
-function matching ()
+function matching()
 {
 	var owner = "대충왕멋진닉네임";
 	var kind = kind_input.value;
@@ -213,6 +219,12 @@ function matching ()
 	var many1 = many_input1.value;
 	var many2 = many_input2.value;
 	var our = our_input.value;
+	
+	if (mmr1.trim() == "" || mmr2.trim() == "" || many1.trim() == "" || many2.trim() == "" || our.trim() == "")
+	{
+		alert("입력에 빈 칸이 있습니다.");
+		return;
+	}
 	
     $.ajax ( {
         url: "./matching_request.jsp",

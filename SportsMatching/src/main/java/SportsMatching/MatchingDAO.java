@@ -64,7 +64,7 @@ public class MatchingDAO {
 			
 			while (result.next())
 			{
-				nos.add(result.getString(1));
+				nos.add(result.getInt(1));
 				kinds.add(result.getString(3));
 				dates.add(result.getString(4));
 				times1.add(result.getString(5));
@@ -89,6 +89,7 @@ public class MatchingDAO {
 			json.put("our", ours);
 			
 			state.close();
+			result.close();
 			return json.toJSONString();
 		}
 		catch (Exception e)
@@ -105,7 +106,7 @@ public class MatchingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			if (state.executeQuery("select _owner from matching_my where _no=" + no + " and _owner='" + owner + "'").next())
+			if (state.executeQuery("select _owner from matching_my where _origin=" + no + " and _owner='" + owner + "'").next())
 			{
 				state.close();
 				
@@ -140,7 +141,7 @@ public class MatchingDAO {
 		}
 	}
 	
-	public String GetMatchingMy()
+	public String GetMatchingMy(String owner)
 	{
 		try 
 		{
@@ -148,47 +149,194 @@ public class MatchingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			String query = "select * from matching;";
+			String query = "select * from matching where _owner='" + owner + "';";
 			
 			ResultSet result = state.executeQuery(query);
 			
-			JSONArray array = new JSONArray();
-			String kinds = "{시작";
-			String dates = "{시작";
-			String times1 = "{시작";
-			String times2 = "{시작";
-			String mmrs1 = "{시작";
-			String mmrs2 = "{시작";
-			String manys1 = "{시작";
-			String manys2 = "{시작";
-			String ours = "{시작";
+			JSONObject json = new JSONObject();
+			ArrayList nos = new ArrayList();
+			ArrayList kinds = new ArrayList();
+			ArrayList dates = new ArrayList();
+			ArrayList times1 = new ArrayList();
+			ArrayList times2 = new ArrayList();
+			ArrayList mmrs1 = new ArrayList();
+			ArrayList mmrs2 = new ArrayList();
+			ArrayList manys1 = new ArrayList();
+			ArrayList manys2 = new ArrayList();
+			ArrayList ours = new ArrayList();
 			
 			while (result.next())
 			{
-				kinds += ", " + result.getString(2);
-				dates += ", " + result.getString(3);
-				times1 += ", " + result.getString(4);
-				times2 += ", " + result.getString(5);
+				nos.add(result.getInt(1));
+				kinds.add(result.getString(3));
+				dates.add(result.getString(4));
+				times1.add(result.getString(5));
+				times2.add(result.getString(6));
 				
-				mmrs1 += ", " + result.getInt(6);
-				mmrs2 += ", " + result.getInt(7);
-				manys1 += ", " + result.getInt(8);
-				manys2 += ", " + result.getInt(9);
-				ours += ", " + result.getInt(10);
+				mmrs1.add(result.getInt(7));
+				mmrs2.add(result.getInt(8));
+				manys1.add(result.getInt(9));
+				manys2.add(result.getInt(10));
+				ours.add(result.getInt(11));
 			}
 			
-			kinds += "}";
-			dates += "}";
-			times1 += "}";
-			times2 += "}";
-			mmrs1 += "}";
-			mmrs2 += "}";
-			manys1 += "}";
-			manys2 += "}";
-			ours += "}";
+			json.put("no", nos);
+			json.put("kind", kinds);
+			json.put("date", dates);
+			json.put("time1", times1);
+			json.put("time2", times2);
+			json.put("mmr1", mmrs1);
+			json.put("mmr2", mmrs2);
+			json.put("many1", manys1);
+			json.put("many2", manys2);
+			json.put("our", ours);
 			
 			state.close();
-			return array.toJSONString();
+			result.close();
+			return json.toJSONString();
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String Cancel(String no, String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			if (!state.executeQuery("select _owner from matching where _no=" + no + " and _owner='" + owner + "'").next())
+			{
+				state.close();
+				
+				return "실패";
+			}
+			
+			state.close();
+			
+			state = conn.createStatement();
+			
+			String query = "delete from matching where _no=" + no + " and _owner='" + owner + "'";
+			
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			return "성공";
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String GetMatchingMyJoin(String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			String query = "select * from matching_my where _owner='" + owner + "';";
+			
+			ResultSet result = state.executeQuery(query);
+			
+			JSONObject json = new JSONObject();
+			ArrayList nos = new ArrayList();
+			ArrayList kinds = new ArrayList();
+			ArrayList dates = new ArrayList();
+			ArrayList times1 = new ArrayList();
+			ArrayList times2 = new ArrayList();
+			ArrayList mmrs1 = new ArrayList();
+			ArrayList mmrs2 = new ArrayList();
+			ArrayList manys1 = new ArrayList();
+			ArrayList manys2 = new ArrayList();
+			ArrayList ours = new ArrayList();
+			
+			while (result.next())
+			{
+				Statement state2 = conn.createStatement();
+				ResultSet result2 = state2.executeQuery("select * from matching where _no=" + result.getInt(3));
+				
+				if (result2.next())
+				{
+					nos.add(result2.getInt(1));
+					kinds.add(result2.getString(3));
+					dates.add(result2.getString(4));
+					times1.add(result2.getString(5));
+					times2.add(result2.getString(6));
+					
+					mmrs1.add(result2.getInt(7));
+					mmrs2.add(result2.getInt(8));
+					manys1.add(result2.getInt(9));
+					manys2.add(result2.getInt(10));
+					ours.add(result2.getInt(11));
+				}
+				
+				state2.close();
+				result2.close();
+			}
+			
+			json.put("no", nos);
+			json.put("kind", kinds);
+			json.put("date", dates);
+			json.put("time1", times1);
+			json.put("time2", times2);
+			json.put("mmr1", mmrs1);
+			json.put("mmr2", mmrs2);
+			json.put("many1", manys1);
+			json.put("many2", manys2);
+			json.put("our", ours);
+			
+			state.close();
+			result.close();
+			return json.toJSONString();
+		}
+		catch (Exception e)
+		{
+			return "실패";
+		}
+	}
+	
+	public String Leave(String no, String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			if (!state.executeQuery("select _owner from matching_my where _origin=" + no + " and _owner='" + owner + "'").next())
+			{
+				state.close();
+				
+				return "실패";
+			}
+			
+			state.close();
+			
+			state = conn.createStatement();
+			
+			String query = "delete from matching_my where _origin=" + no + " and _owner='" + owner + "'";
+			
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			state = conn.createStatement();
+			
+			query = "update matching set _our=_our-1 where _no=" + no;
+			
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			return "성공";
 		}
 		catch (Exception e)
 		{
