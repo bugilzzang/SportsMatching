@@ -24,7 +24,6 @@ public class SignDAO {
 		    ptstm.executeUpdate();
 						
 		    ptstm.close();
-		    conn.close();
 		    
 			return "성공";
 		}catch (Exception e){
