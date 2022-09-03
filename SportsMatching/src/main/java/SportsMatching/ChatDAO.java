@@ -8,18 +8,18 @@ import javax.sql.DataSource;
 
 public class ChatDAO {
 	//test code
-	public int dbtest(int a, String b, String c, String d, int date) {
+	public int INSERT(int chatID, String fromID, String toID, String chatContent, int chatTime) {
 		String SQL = "insert into chat values(?,?,?,?,?)";
 		try (
-		    //DB 연
+		    //DB 연결 
 			Connection conn = DBConnection.GetDB();
 			PreparedStatement ptstm = conn.prepareStatement(SQL);
 			){
-			ptstm.setInt(1, a);
-			ptstm.setString(2, b);
-			ptstm.setString(1, c);
-			ptstm.setString(1, d);
-			ptstm.setInt(1, date);
+			ptstm.setInt(1, chatID);
+			ptstm.setString(2, fromID);
+			ptstm.setString(3, toID);
+			ptstm.setString(4, chatContent);
+			ptstm.setInt(5, chatTime);
 			
 			int result = ptstm.executeUpdate();
 			return result;	
