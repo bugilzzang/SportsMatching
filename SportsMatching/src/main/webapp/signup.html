@@ -62,7 +62,30 @@
 <script>
 
     function trySignup(){
-    	var 
-    	window.location.href="signupcomplete.html"
+    	var name = username.value;
+    	var id = userid.value;
+    	var pw = userpw.value;
+    	var address = useraddress.value;
+    	var mmr = 1000;
+    	
+        $.ajax ( {
+            url: "./signup.jsp",
+            method: "POST",
+            data: { name : name, id : id, pw : pw, address: address, mmr : mmr },
+            dataType: "text",
+            success: (data) => {
+            	if (data.trim() == "성공")
+            	{
+            	  window.location.href="signupcomplete.html"
+            	}
+            	else
+            	{
+            		alert("서비스 접속에 실패했습니다.");
+            	}
+            },
+            error: () => {
+            	alert("네트워크 연결을 확인해주세")
+            }
+        })
     }
 </script>
