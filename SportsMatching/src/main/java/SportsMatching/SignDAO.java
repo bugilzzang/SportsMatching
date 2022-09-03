@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 public class SignDAO {
 	//test code
 	public String SignUP(String name, String id, String pw, String address, String mmr) {
-		String SQL = "insert into chat values(?,?,?,?,?)";
+		String SQL = "insert into user values(?,?,?,?,?)";
 		try (
 		    //DB 연결 
 			Connection conn = DBConnection.GetDB();
@@ -24,6 +24,8 @@ public class SignDAO {
 		    ptstm.executeUpdate();
 						
 		    ptstm.close();
+		    conn.close();
+		    
 			return "성공";
 		}catch (Exception e){
 			return "실패";
