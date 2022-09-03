@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="SportsMatching.*"%>
+
 <%
-String name = request.getParameter("name");
-String id = request.getParameter("id");
+String name = request.getParameter("id");
+String id = request.getParameter("name");
 String pw = request.getParameter("pw");
 String address = request.getParameter("address");
 String mmr = request.getParameter("mmr");
@@ -18,5 +19,4 @@ System.out.println(mmr);
 
 String result = new SignDAO().SignUP(name, id, pw, address, mmr);
 out.print(result);
-
 %>
