@@ -22,11 +22,11 @@ public class SignDAO {
 			ptstm.setInt(5, Integer.parseInt(mmr));
 			
 		    ptstm.executeUpdate();
-						
-		    ptstm.close();
+					
 		    
 			return "성공";
-		}catch (Exception e){
+		 }catch (Exception e){
+			System.out.println(e.getMessage());
 			return "실패";
 		 }
 	 }
