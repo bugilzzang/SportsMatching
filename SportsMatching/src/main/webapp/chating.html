@@ -8,7 +8,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
     body{
-    margin-top:20px;
+    margin: 0;
     background:#f5f5f5;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .chat-room .kiri-side {
-    width: 25%;
+    width: 30%;
     background: #e5e8ef;
     border-radius: 4px 0 0 4px;
     -webkit-border-radius: 4px 0 0 4px;
@@ -56,7 +56,7 @@
 .chat-room .kiri-side .user-head {
     background: #2980b9;
     color: #FFFFFF;
-    min-height: 70px;
+    height: 50px;
     padding: 15px;
 }
 .chat-room .kanan-side .user-head {
@@ -85,7 +85,7 @@
 .chat-room-head {
     background: #3498db;
     color: #FFFFFF;
-    min-height: 70px;
+    height: 50px;
     padding: 15px;
 }
 
@@ -159,7 +159,8 @@ ul.chat-list li h4 i {
 }
 
 ul.chat-list li a span {
-    padding-left: 10px;
+    padding-left: 2px;
+    font-size: 14px;
 }
 
 ul.chat-list li a i.fa-times {
@@ -392,11 +393,48 @@ a.guest-on i {
 .lobby {
     padding: 0 !important;
 }
-  </style>
+
+.chat_box_you {
+	text-align: left;
+	border-radius: 5px;
+	background-color: #3366DD1F;
+	padding: 3px;
+	margin: 5px;
+}
+.chat_box_my {
+	text-align: right;
+	border-radius: 5px;
+	background-color: #3399DD1F;
+	padding: 3px;
+	margin: 5px;
+}
+
+#message_input {
+	position: absolute;
+	right: 50px;
+	bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid #666666;
+	background-color: #3399DD1F;
+	height: 25px;
+	line-height: 25px;
+}
+#message_button {
+	position: absolute;
+	right: 6px;
+	bottom: 10px;
+	border: 3px solid #458BFA;
+	background-color: #4286F5;
+	color: #ffffff;
+	height: 25px;
+	line-height: 25px;
+}
+
+</style>
 </head>
 
 <body>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdey.com">
 <div class="row">
     <div class="col-md-12">
@@ -407,7 +445,7 @@ a.guest-on i {
             <aside class="kiri-side">
                 <div class="user-head">
                     <i class="fa fa-comments-o"></i>
-                    <h3>운동매칭 채팅창</h3>
+                    <h5>채팅창</h5>
                 </div>
                 <ul class="chat-list">
                     <li class="">
@@ -415,46 +453,46 @@ a.guest-on i {
                             <h4>
                                 <i class="fa fa-list"></i>
 
-                            참여한 채팅 목록
+                            채팅 목록
                             </h4>
                         </a>
                     </li>
                     <li>
                         <a href="#chat_room.html">
                             <i class="fa fa-rocket"></i>
-                            <span>축구방</span>
-                            <i class="fa fa-times pull-right"></i>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="#chat_room.html">
-                            <i class="fa fa-rocket"></i>
-                            <span>농구방</span>
+                            <span>축구</span>
                             <i class="fa fa-times pull-right"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#chat_room.html">
                             <i class="fa fa-rocket"></i>
-                            <span>배드민턴방</span>
+                            <span>농구</span>
                             <i class="fa fa-times pull-right"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#chat_room.html">
                             <i class="fa fa-rocket"></i>
-                            <span>헬스방</span>
+                            <span>배드민턴</span>
+                            <i class="fa fa-times pull-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#chat_room.html">
+                            <i class="fa fa-rocket"></i>
+                            <span>헬스</span>
                             <i class="fa fa-times pull-right"></i>
                         </a>
                     </li>
                 </ul>
-                <ul class="chat-list chat-user">
+                <ul class="chat-list">
                   <li class="">
                         <a class="lobby" href="#lobby.html">
                             <h4>
                                 <i class="fa fa-list"></i>
 
-                            온라인 친구 목록
+                            친구 목록
                             </h4>
                         </a>
                     </li>
@@ -496,6 +534,12 @@ a.guest-on i {
                 <div class="chat-room-head">
                     <h3>채팅함</h3>
                 </div>
+                
+                <div class='chat_box_you'>안녕</div>
+                <div class='chat_box_my'>안녕</div>
+                
+                <input id='message_input'></input>
+                <div id='message_button'>전송</div>
             </div>
         </div>
         <!-- end:chat room -->
@@ -503,4 +547,12 @@ a.guest-on i {
 </div>
 </div>
 </body>
+
+<script src='./js/jquery-3.6.1.min.js'></script>
+<script>
+
+
+
+</script>
+
 </html>

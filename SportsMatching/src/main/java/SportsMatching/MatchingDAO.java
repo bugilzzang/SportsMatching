@@ -30,6 +30,25 @@ public class MatchingDAO {
 			state.executeUpdate(query);
 			
 			state.close();
+			
+			/*
+			PreparedStatement state = conn.prepareStatement("insert into matching values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			
+			state.setString(1, owner);
+			state.setString(2, kind);
+			state.setString(3, date);
+			state.setString(4, time1);
+			state.setString(5, time2);
+			
+			state.setInt(6, Integer.parseInt(mmr1));
+			state.setInt(7, Integer.parseInt(mmr2));
+			state.setInt(8, Integer.parseInt(many1));
+			state.setInt(9, Integer.parseInt(many2));
+			state.setInt(10, Integer.parseInt(our));
+			
+			state.close();
+			*/
+			
 			return "성공";
 		}
 		catch (Exception e)
