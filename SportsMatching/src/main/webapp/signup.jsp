@@ -17,6 +17,7 @@ System.out.println(pw);
 System.out.println(address);
 System.out.println(mmr);
 
+
 String result = new SignDAO().SignUP(name, id, pw, address, mmr);
 out.print(result);
 %>
