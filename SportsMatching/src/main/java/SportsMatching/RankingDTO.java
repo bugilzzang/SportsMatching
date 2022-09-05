@@ -6,6 +6,7 @@ public class RankingDTO {
 	private String UserName;
 	private String Adress;
 	private int UserMmr;
+	private String Introduction;
 	private int rank;
 	
 	
@@ -26,6 +27,13 @@ public class RankingDTO {
 	}
 	public void setAdress(String adress) {
 		this.Adress = adress;
+	}
+	
+	public String getIntroduction() {
+		return Introduction;
+	}
+	public void setIntroduction(String introduction) {
+		this.Introduction = introduction;
 	}
 	public int getUserMmr() {
 		return UserMmr;
