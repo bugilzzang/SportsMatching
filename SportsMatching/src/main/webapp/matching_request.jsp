@@ -25,7 +25,7 @@
 	System.out.println(many2);
 	System.out.println(our);
 	
-	String result = new MatchingDAO().Matchinng(owner, kind, date, time1, time2, mmr1, mmr2, many1, many2, our);
+	String result = new MatchingDAO().Matching(owner, kind, date, time1, time2, mmr1, mmr2, many1, many2, our);
 	
 	out.print(result);
 %>
