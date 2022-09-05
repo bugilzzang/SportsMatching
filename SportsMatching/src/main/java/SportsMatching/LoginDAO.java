@@ -3,26 +3,27 @@ package SportsMatching;
 import java.sql.*;
 
 public class LoginDAO {
-
-	public String Matchinng(String id, String name, String password, String address, int mmr)
+	
+	public static String enter_Member(String userID, String userPW)
 	{
+		String SQL1 = "SELECT USER_ID, USER_PASSWORD FROM MEMBER WHERE USER_ID = ? and USER_PASSWORD = ?";
 		try {
 			Connection conn = DBConnection.GetDB();
+			PreparedStatement ptstn = conn.prepareStatement(SQL1);
+			ptstn.setString(1, userID);
+			ptstn.setString(2, userPW);
+			ResultSet rs = ptstn.executeQuery(SQL1);
 			
-			Statement state = conn.createStatement();
+			if(rs.next()) {
+				ptstn.close();
+				return "로그인성공";
+			}else {
+				ptstn.close();
+				return "로그인실패";
+			}
 			
-			String query ="insert into member values(";
-			query += id + ",";
-			query += name + ",";
-			query += password + ",";
-			query += address + ",";
-			query += 0;
 			
-			state.executeUpdate(query);
-			
-			state.close();
 					
-			return "성공";
 		}catch (Exception e) {
 			return "실패";
 		}
