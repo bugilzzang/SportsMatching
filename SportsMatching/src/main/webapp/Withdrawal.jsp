@@ -5,6 +5,8 @@
 <%
 String id = request.getParameter("ssid");
 
+System.out.println(id);
+
 String result = new WithdrawalDAO().Withdrawal(id);
 out.print(result);
 %>
