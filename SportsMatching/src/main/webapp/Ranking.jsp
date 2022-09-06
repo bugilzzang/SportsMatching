@@ -3,11 +3,10 @@
 <%@ page import="SportsMatching.*,java.util.*"%>
 
 <%
+String UserID = request.getParameter("UserID");
 
-RankingDTO dto = new RankingDAO().selectOne("정부길");
-System.out.println(dto.getUserID());
-System.out.println(dto.getUserName());
-System.out.println(dto.getAdress());
-System.out.println(dto.getUserMmr());
-System.out.println(dto.getIntroduction());
+String result = new RankingDAO().GetRankingList(UserID);
+
+out.print(result);
+	
 %>

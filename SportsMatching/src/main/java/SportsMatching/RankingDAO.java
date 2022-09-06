@@ -1,12 +1,15 @@
 package SportsMatching;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.*;
-import java.util.List;
+
 import SportsMatching.*;
 import java.util.*;
+import org.json.simple.JSONObject;
+
+
+
+/**
+하나씩 데이터를 출력 받는 방
 
 public class RankingDAO {
 	public RankingDTO selectOne(String id){
@@ -33,8 +36,50 @@ public class RankingDAO {
 	}
  }
 }
-	
+*/
 
+public class RankingDAO {
+	
+	public String GetRankingList(String UserID) {
+		try {
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			String query = "select * from Ranking order by UserID desc limit 5";
+			
+			ResultSet result = state.executeQuery(query);
+			
+			JSONObject json = new JSONObject();
+			ArrayList UserNames = new ArrayList();
+			ArrayList Adresss = new ArrayList();
+			ArrayList UserMmrs = new ArrayList();
+			ArrayList Introductions = new ArrayList();
+			
+			
+			while (result.next())
+			{
+				UserNames.add(result.getString(2));
+				Adresss.add(result.getString(3));
+				UserMmrs.add(result.getInt(4));
+				Introductions.add(result.getString(5));
+			}
+			json.put("UserName", UserNames);
+			json.put("Adress", Adresss);
+			json.put("UserMmr", UserMmrs);
+			json.put("Introduction", Introductions);
+			
+			state.close();
+			result.close();
+			return json.toJSONString();
+			
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+				return "실패";
+			}
+	}
+	
+}
 
 
 

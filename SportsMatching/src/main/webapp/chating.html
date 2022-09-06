@@ -32,6 +32,11 @@ body {
 	height: calc(100% - 120px);
 	overflow: scroll;
 }
+pre {
+	display: inline;
+	margin: 0;
+	
+}
 
 .chat-room {
     border-collapse: collapse;
@@ -511,36 +516,8 @@ a.guest-on i {
                             <h4>
                                 <i class="fa fa-list"></i>
 
-                            친구 목록
+                            채팅 목록
                             </h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="##">
-                            <i class="fa fa-circle text-success"></i>
-                            <span>정부길</span>
-                            <i class="fa fa-times pull-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="##">
-                            <i class="fa fa-circle text-success"></i>
-                            <span>박다한</span>
-                            <i class="fa fa-times pull-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="##">
-                            <i class="fa fa-circle text-muted"></i>
-                            <span>조동훈</span>
-                            <i class="fa fa-times pull-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="##">
-                            <i class="fa fa-circle text-danger"></i>
-                            <span>이영준</span>
-                            <i class="fa fa-times pull-right"></i>
                         </a>
                     </li>
                 </ul>
@@ -551,37 +528,13 @@ a.guest-on i {
             <!-- start:aside tengah chat room -->
             <aside class="tengah-side">
                 <div class="chat-room-head">
-                    <h3>채팅함</h3>
+                    <h3 onclick='main()'>SportsMatching</h3>
                 </div>
                 <div id='chat_content'>
-                
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                <div class='chat_box_you'>안녕</div>
-                <div class='chat_box_my'>안녕</div>
-                
                 </div>
                 
-                <input id='message_input'></input>
-                <div id='message_button'>전송</div>
+                <input id='message_input' maxlength='100'></input>
+                <div id='message_button' onclick='SendMessage()'>전송</div>
             </div>
         </div>
         <!-- end:chat room -->
@@ -592,8 +545,183 @@ a.guest-on i {
 
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
+function main()
+{
+	window.location = "./MAIN.html";
+}
 
+var selectedRoom = -1;
 
+$(document).ready(() => { 
+	
+	var owner = "안멋진닉네임";
+	
+	$.ajax ( {
+        url: "./matching_list_my.jsp",
+        method: "POST",
+        data: { owner: owner },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "실패")
+        	{
+        		alert("서비스 접근에 실패했습니다.");
+        	}
+        	else
+        	{
+        		console.log(data);
+        		var target = JSON.parse(data);
+        		var tags = "";
+        		
+        		for (var i = 0; i < target.kind.length; i++)
+        		{
+        			tags += "<li onclick='ShowMessage(" + target.no[i] + ")'>";
+        			tags += "<a href='##'>";
+        			tags += "<i class='fa fa-circle text-success'></i>";
+        			tags += "<pre>" + target.kind[i] + " " + target.date[i];
+        			tags += "\n" + target.time1[i];
+        			tags += "~" + target.time2[i];
+        			tags += "</pre>";
+        			tags += "</a>";
+        			tags += "</li>";
+    			}
+        		
+        		$(".chat-list").html($(".chat-list").html() + tags);
+        	}
+        },
+        error: () => {
+        	
+        }
+    })
+    
+    $.ajax ( {
+        url: "./matching_list_my_join.jsp",
+        method: "POST",
+        data: { owner: owner },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "실패")
+        	{
+        		alert("서비스 접근에 실패했습니다.");
+        	}
+        	else
+        	{
+        		console.log(data);
+        		var target = JSON.parse(data);
+        		var tags = "";
+        		
+        		for (var i = 0; i < target.kind.length; i++)
+        		{
+        			tags += "<li onclick='ShowMessage(" + target.no[i] + ")'>";
+        			tags += "<a href='##'>";
+        			tags += "<i class='fa fa-circle text-success'></i>";
+        			tags += "<pre>" + target.kind[i] + " " + target.date[i];
+        			tags += "\n" + target.time1[i];
+        			tags += "~" + target.time2[i];
+        			tags += "</pre>";
+        			tags += "</a>";
+        			tags += "</li>";
+    			}
+        		
+        		$(".chat-list").html($(".chat-list").html() + tags);
+        	}
+        },
+        error: () => {
+        	
+        }
+    })
+    
+});
+
+function ShowMessage(no)
+{
+	var owner = "안멋진닉네임";
+	
+	$.ajax ( {
+        url: "./chat_get_message.jsp",
+        method: "POST",
+        data: { no: no },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "실패")
+        	{
+        		alert("서비스 접근에 실패했습니다.");
+        	}
+        	else
+        	{
+        		console.log(data);
+        		var target = JSON.parse(data);
+        		var tags = "";
+        		
+        		for (var i = 0; i < target.owner.length; i++)
+        		{
+        			if (owner == target.owner[i])
+        			{
+        				tags += "<div class='chat_box_my'>";
+        				tags += target.message[i];
+        				tags += "</div>";
+        			}
+        			else
+        			{
+        				tags += "<div class='chat_box_you'>[";
+        				tags += target.owner[i] + "] ";
+        				tags += target.message[i];
+        				tags += "</div>";
+        			}
+    			}
+        		
+        		$("#chat_content").html(tags);
+        	}
+        },
+        error: () => {
+        	
+        }
+    })
+	
+	selectedRoom = no;
+}
+
+function SendMessage()
+{
+	if (selectedRoom == -1)
+	{
+		return;
+	}
+	
+	var owner = "안멋진닉네임";
+	var message = message_input.value;
+	
+	if (message.trim() == "")
+	{
+		return;
+	}
+	if (message.length > 100)
+	{
+		alert("100자 이하만 전송할 수 있습니다.")
+		return;
+	}
+	
+	
+	$.ajax ( {
+        url: "./chat_send_message.jsp",
+        method: "POST",
+        data: { owner: owner, no: selectedRoom, message: message },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "실패")
+        	{
+        		alert("서비스 접근에 실패했습니다.");
+        	}
+        	else
+        	{
+        		message_input.value = "";
+        		ShowMessage(selectedRoom);
+        	}
+        },
+        error: () => {
+        	
+        }
+    })
+}
 
 </script>
 
