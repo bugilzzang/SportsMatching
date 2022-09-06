@@ -9,7 +9,5 @@ System.out.println(id);
 
 String result = new WithdrawalDAO().Withdrawal(id);
 
-System.out.println("JSP ID :" + id);
-
 out.print(result);
 %>

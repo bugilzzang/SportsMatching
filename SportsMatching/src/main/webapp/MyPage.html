@@ -54,11 +54,7 @@
 
     <div class="panel-btn">
         <div class="row">
-
-            <button class="withdrawbtn" id="withdrawbtn" onclick= "Withdrawal()" >회원 탈퇴</button>
-
             <button class="withdrawbtn" id="withdrawbtn" onclick = 'Withdrawal()'>회원 탈퇴</button>
-
         </div>            
     </div>
       
@@ -82,7 +78,6 @@ function Withdrawal(){
         	if(data.trim() == "성공"){
         		alert("회원 탈퇴 성공");
         	    sessionStorage.clear();
-        	    window.location.href = "MAIN.html"
             }
             else{
         	    alert("회원 탈퇴 실패");
