@@ -19,28 +19,47 @@
 
      <div>
         <div class="goChating">
-            <img id="chating_img" src="./images/SMchating.jpg" width="95" height="95">
+            <img id="chating_img" src="./images/SMchating.jpg" onclick = goChating() width="95" height="95">
             <label class="signupcomplete" style="font-weight: bold; font-size: 25px;padding-bottom: 30px;">채팅</label>
             
         </div>
         
      <div class="go_ratingpage">
-        <img id="evalution_img" src="./images/SMevalution.jpg" width="95" height="95">
+        <img id="evalution_img" src="./images/SMevalution.jpg" onclick = goRating() width="95" height="95">
         <label class="signupcomplete" style="font-weight: bold; font-size: 20px;padding-bottom: 20px;">유저 평가</label>
      </div>
         
      </div>
 
      <div class="start_matching">
-        <img id="chating_img" src="./images/SMstart.jpg" width="83" height="83">
+        <img id="chating_img" src="./images/SMstart.jpg" onclick = goMatching() width="83" height="83">
         <label class="signupcomplete" style="font-weight: bold; font-size: 25px;padding-bottom: 30px;">STRAT</label>
      </div>
 
      
       
      <div class="go_marketing">
-        <img id="chating_img" src="./images/SMpartner.jpg" width="150" height="150">
+        <img id="chating_img" src="./images/SMpartner.jpg" onclick = goMarketing() width="150" height="150">
         <label class="signupcomplete" style="line-height: 30px;font-weight: bold; font-size: 25px;padding-bottom: 30px;">PARTNERS</label>
      </div>            
 
 </body>
+
+<script src='./js/jquery-3.6.1.min.js'></script>
+<script>
+function goChating(){
+	window.location.href="chating.html"
+}
+
+function goRating(){
+	window.location.href="Ranking.html"
+}
+
+function goMatching(){
+	window.location.href="SportsMatching.html"
+}
+
+function goMarketing(){
+	window.location.href="SportMarketing.html"
+}
+</script>

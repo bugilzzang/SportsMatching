@@ -4,15 +4,19 @@ import java.sql.*;
 
 public class LoginDAO {
 	
-	public static String enter_Member(String userID, String userPW)
+	public String enter_Member(String userID, String userPW)
 	{
-		String SQL1 = "SELECT USER_ID, USER_PASSWORD FROM MEMBER WHERE USER_ID = ? and USER_PASSWORD = ?";
+		
+		String SQL1 = "SELECT USER_ID, USER_PASSWORD FROM USER WHERE USER_ID = ? AND USER_PASSWORD = ?";
+		
 		try {
 			Connection conn = DBConnection.GetDB();
+			
 			PreparedStatement ptstn = conn.prepareStatement(SQL1);
 			ptstn.setString(1, userID);
 			ptstn.setString(2, userPW);
-			ResultSet rs = ptstn.executeQuery(SQL1);
+			
+			ResultSet rs = ptstn.executeQuery();
 			
 			if(rs.next()) {
 				ptstn.close();
@@ -25,6 +29,7 @@ public class LoginDAO {
 			
 					
 		}catch (Exception e) {
+			System.out.println("에러 :" + e.getMessage());
 			return "실패";
 		}
 		
