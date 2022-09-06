@@ -7,7 +7,7 @@ public class LoginDAO {
 	public String enter_Member(String userID, String userPW)
 	{
 		
-		String SQL1 = "SELECT USER_ID, USER_PASSWORD FROM MEMBER WHERE USER_ID = ? AND USER_PASSWORD = ?";
+		String SQL1 = "SELECT USER_ID, USER_PASSWORD FROM USER WHERE USER_ID = ? AND USER_PASSWORD = ?";
 		
 		try {
 			Connection conn = DBConnection.GetDB();
