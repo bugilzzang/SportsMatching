@@ -38,7 +38,7 @@
         </div>
         <div class="panel-btn">
             <div class="row">
-                <button class="loginbtn" id="loginbtn" onclick="tryLogin">로그인</button>
+                <button class="loginbtn" id="loginbtn" onclick="tryLogin()">로그인</button>
             </div>            
         </div>
     </div>
@@ -54,7 +54,7 @@
     </div>
 
 </body>
-
+<script src='./js/jquery-3.6.1.min.js'></script>
 <script>
 function tryLogin(){
     	var id = userid.value;
@@ -68,12 +68,12 @@ function tryLogin(){
             success: (data) => {
             	if (data.trim() == "로그인성공")
             	{
+            		alert("로그인 성공!");
             	  window.location.href="MAIN.html"
             	}
             	else if(data.trim() == "로그인실패"){
             		alert("로그인 정보가 틀립니다.");
-            	}
-            	else
+            	}else
             	{
             		alert("서비스 접속에 실패했습니다.");
             	}
@@ -83,4 +83,5 @@ function tryLogin(){
             }
         })
     }
+    
 </script>
