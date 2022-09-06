@@ -164,8 +164,7 @@ public class MatchingDAO {
 	{
 		try 
 		{
-			Connection conn = DBConnection.GetDB();
-			
+			Connection conn = DBConnection.GetDB();			
 			Statement state = conn.createStatement();
 			
 			String query = "select * from matching where _owner='" + owner + "';";
