@@ -60,8 +60,8 @@ function tryLogin(){
     	var id = userid.value;
     	var pw = userpw.value;
     	
-    	sessionStorage.setItem("id", id);
-    	    		
+    	sessionStorage.setItem("ssid", JSON.stringify(id));
+    	
         $.ajax ( {
             url: "./login_request.jsp",
             method: "POST",

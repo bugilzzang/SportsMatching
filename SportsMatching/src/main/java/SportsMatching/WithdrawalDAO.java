@@ -14,9 +14,11 @@ public class WithdrawalDAO {
 			ptstn.setString(1, id);
 			ptstn.executeUpdate();
 			
+			ptstn.close();
+			
 			return "성공";
 		}catch(Exception e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 			return "실패";
 		}
 		

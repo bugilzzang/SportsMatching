@@ -5,7 +5,6 @@
 	String USER_ID = request.getParameter("id");
 	String USER_PASSWORD = request.getParameter("pw");
 	
-	
 	System.out.println(USER_ID);
 	System.out.println(USER_PASSWORD);
 	
