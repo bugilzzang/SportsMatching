@@ -18,7 +18,7 @@ public class WithdrawalDAO {
 			
 			return "성공";
 		}catch(Exception e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 			return "실패";
 		}
 		

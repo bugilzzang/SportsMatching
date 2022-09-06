@@ -61,7 +61,7 @@ function tryLogin(){
     	var pw = userpw.value;
     	
     	sessionStorage.setItem("ssid", JSON.stringify(id));
-    	    		
+
         $.ajax ( {
             url: "./login_request.jsp",
             method: "POST",
