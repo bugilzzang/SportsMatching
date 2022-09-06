@@ -7,7 +7,7 @@ import org.json.simple.*;
 
 public class MatchingDAO {
 
-	public String Matchinng(String owner, String kind, String date, String time1, String time2, String mmr1, String mmr2, String many1, String many2, String our)
+	public String Matching(String owner, String kind, String date, String time1, String time2, String mmr1, String mmr2, String many1, String many2, String our)
 	{
 		try 
 		{
