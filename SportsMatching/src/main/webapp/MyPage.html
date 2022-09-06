@@ -54,7 +54,7 @@
 
     <div class="panel-btn">
         <div class="row">
-            <button class="withdrawbtn" id="withdrawbtn" >회원 탈퇴</button>
+            <button class="withdrawbtn" id="withdrawbtn" onclick = 'Withdrawal()'>회원 탈퇴</button>
         </div>            
     </div>
       
@@ -65,13 +65,14 @@
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
 function Withdrawal(){
+	
 	//내 예상대로라면 헤더에서 정보가 계속 남아있어서 이걸로 id를 땡겨
-	var ssid = sessionStorage.getItem("id");
+	var ssid = sessionStorage.getItem("ssid");
 	
 	$.ajax ({
 		url : "./Withdrawal.jsp",
 		method : "POST",
-		data : { id : ssid },
+		data : { ssid : ssid },
         dataType : "text",
         success: (data) => {
         	if(data.trim() == "성공"){
