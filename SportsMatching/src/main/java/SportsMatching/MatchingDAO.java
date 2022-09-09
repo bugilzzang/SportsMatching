@@ -252,6 +252,66 @@ public class MatchingDAO {
 		}
 	}
 	
+	public String Complete(String no, String owner)
+	{
+		try 
+		{
+			Connection conn = DBConnection.GetDB();
+			
+			Statement state = conn.createStatement();
+			
+			if (!state.executeQuery("select _owner from matching where _no=" + no + " and _owner='" + owner + "'").next())
+			{
+				state.close();
+				
+				return "실패";
+			}
+			
+			String query = "select * from matching_my where _origin=" + no + ";";
+			
+			ResultSet result = state.executeQuery(query);
+			
+			while (result.next())
+			{
+				Statement state2 = conn.createStatement();
+				query = "select * from matching_my where _origin=" + no + " and _owner!='" + result.getString(2) + "';";
+				ResultSet result2 = state2.executeQuery(query);
+				
+				Statement state3 = conn.createStatement();
+				
+				while (result2.next())
+				{
+					query = "insert into matching_rating values(0, '" + result.getString(2) + "', '" + result2.getString(2) + "');";
+					state3.executeUpdate(query);
+				}
+				
+				query = "insert into matching_rating values(0, '" + result.getString(2) + "', '" + owner + "');";
+				state3.executeUpdate(query);
+				
+				query = "insert into matching_rating values(0, '" + owner + "', '" + result.getString(2) + "');";
+				state3.executeUpdate(query);
+				
+				result2.close();
+				state2.close();
+				state3.close();
+			}
+			
+			result.close();
+			
+			query = "delete from matching where _no=" + no + " and _owner='" + owner + "'";
+			state.executeUpdate(query);
+			
+			state.close();
+			
+			return "성공";
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return "실패";
+		}
+	}
+	
 	public String GetMatchingMyJoin(String owner)
 	{
 		try 

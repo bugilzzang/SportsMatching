@@ -161,7 +161,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 $(document).ready(() => { 
 	
-	var owner = "안멋진닉네임";
+	var owner = "대충왕멋진닉네임";
 	
 	$.ajax ( {
         url: "./matching_list_my.jsp",
@@ -232,7 +232,8 @@ $(document).ready(() => {
         			tags += "<a class='content_input_text content_desc_text content_input1' id='our_input1'>" + target.our[i] + "</a>";
         			tags += "</div>";
         			
-        			tags += "<div class='content_box' style='padding-left: 625px;'>";
+        			tags += "<div class='content_box' style='padding-left: 395px;'>";
+        			tags += "<a class='content_text content_desc_text content_button' style='margin-left: 35px;' onclick='CompleteMatching(" + target.no[i] + ")'>매칭완료</a>";
         			tags += "<a class='content_text content_desc_text content_button' style='margin-left: 35px;' onclick='CancelMatching(" + target.no[i] + ")'>매칭닫기</a>";
         			tags += "</div>";
         			tags += "</div>";
@@ -345,9 +346,34 @@ $(document).ready(() => {
     
 });
 
+function CompleteMatching(no)
+{
+	var owner = "대충왕멋진닉네임";
+	
+    $.ajax ( {
+        url: "./matching_complete.jsp",
+        method: "POST",
+        data: { no: no, owner: owner },
+        dataType: "text",
+        success: (data) => {
+        	if (data.trim() == "성공")
+        	{
+        		alert("매칭을 완료했습니다.");
+        		window.location = window.location;
+        	}
+        	else
+        	{
+        		alert("매칭 완료에 실패했습니다.");
+    		}
+        },
+        error: () => {
+        	
+        }
+    })
+}
 function CancelMatching(no)
 {
-	var owner = "안멋진닉네임";
+	var owner = "대충왕멋진닉네임";
 	
     $.ajax ( {
         url: "./matching_cancel.jsp",
@@ -373,7 +399,7 @@ function CancelMatching(no)
 
 function LeaveMatching(no)
 {
-	var owner = "안멋진닉네임";
+	var owner = "대충왕멋진닉네임";
 	
     $.ajax ( {
         url: "./matching_leave.jsp",
