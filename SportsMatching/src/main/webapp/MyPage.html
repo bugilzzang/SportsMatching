@@ -71,9 +71,9 @@ function userload(){
         dataType : "text",
         success : (data) => {
         	var userinfo = data.split(',');
-        	document.getElementById("changeName").innerText = userinfo[0];
-        	document.getElementById("changeId").innerText = userinfo[1];
-        	document.getElementById("changeAddress").innerText = userinfo[2];
+        	document.getElementById("changeName").innerText = userinfo[1];
+        	document.getElementById("changeId").innerText = userinfo[2];
+        	document.getElementById("changeAddress").innerText = userinfo[3];
         }
     })
 }

@@ -10,7 +10,7 @@ String userid = result.get("UserId");
 String username = result.get("UserName");
 String useraddress = result.get("UserAddress");
 
-String finalresult = userid + "," + username + "," + useraddress;
+String finalresult = "," + userid + "," + username + "," + useraddress;
 
 out.print(finalresult);
 %>
