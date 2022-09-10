@@ -3,14 +3,14 @@ package SportsMatching;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.simple.JSONObject;
+
+
 
 public class userloadDAO {
-	public String userloadDAO(String id){
+	public Map<String, String> userloadingDAO(String id) throws Exception {
 		String SQL = "select * from user where USER_ID = ?";
 		
 		try {
@@ -20,25 +20,23 @@ public class userloadDAO {
 
 			ResultSet result = ptstn.executeQuery();
 			
-			JSONObject json = new JSONObject();
+			result.next();
 			
-			Map<String, String> userload = new HashMap<>();
+			String UserId = result.getString(1);
+			String UserName = result.getString(2);
+			String UserAddress = result.getString(4);
 			
-		    userload.put("userName",result.getString(1));
-			userload.put("userId",result.getString(2));
-			userload.put("userAddress",result.getString(3));
+			Map<String, String> userinformation = new HashMap<>();
+			userinformation.put("UserId", UserId);
+			userinformation.put("UserName", UserName);
+			userinformation.put("UserAddress", UserAddress);
 			
-			System.out.println(userload.get("userName"));
-			System.out.println(userload.get("userId"));
-			System.out.println(userload.get("userAddress"));
+			return userinformation;
 			
-			
-			return json.toJSONString();
-						
 				
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-			return "실패";
+			return null;
 		}
 		
 	}
