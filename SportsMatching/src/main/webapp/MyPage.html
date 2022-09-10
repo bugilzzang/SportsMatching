@@ -32,20 +32,16 @@
             <div class="row">
                 <div class="signupform-group" >
                     <label class="signuplabel">이름</label>
-                    <label class="signuplabel" style="font-weight:bold; font-size: 110%">name</label>
+                    <label class="signuplabel" id="changeName" style="font-weight:bold; font-size: 110%">name</label>
                                 
                 </div>
                 <div class="signupform-group">
                     <label class="signuplabel">아이디</label>
-                    <label class="signuplabel"style="font-weight:bold; font-size: 110%">id</label>
+                    <label class="signuplabel" id="changeId" style="font-weight:bold; font-size: 110%">id</label>
                 </div>
                 <div class="signupform-group">
                     <label class="signuplabel">주소</label>
-                    <label class="signuplabel"style="font-weight:bold; font-size: 110%">address</label>
-                </div>
-                <div class="signupform-group">
-                    <label class="signuplabel">MMR</label>
-                    <label class="signuplabel"style="font-weight:bold; font-size: 110%">MMR</label>
+                    <label class="signuplabel" id="changeAddress" style="font-weight:bold; font-size: 110%">address</label>
                 </div>
             </div>
         </div>
@@ -73,6 +69,12 @@ function userload(){
 		method : "POST",
 		data : { ssid : ssid },
         dataType : "text",
+        success : (data) => {
+        	var userinfo = data.split(',');
+        	document.getElementById("changeName").innerText = userinfo[0];
+        	document.getElementById("changeId").innerText = userinfo[1];
+        	document.getElementById("changeAddress").innerText = userinfo[2];
+        }
     })
 }
 
