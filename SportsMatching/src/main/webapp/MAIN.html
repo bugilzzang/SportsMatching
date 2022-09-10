@@ -13,7 +13,7 @@
          <a href='login.html' class='content_text' id='title_text'>Sports Matching</a>
 
              <div id='login_status'>
-                 <a href='login.html' class='menu_button content_text'>로그인</a>
+                 <a href='login.html' class='menu_button content_text' id="changeLogin">로그인</a>
              </div>
      </div>
 
@@ -49,9 +49,11 @@
 <script>
 function wasLogin(){
 	if(sessionStorage.getItem('ssid') != null){
-		
+		document.getElementById("changeLogin").innerText = "내정보";
+		document.getElementById("changeLogin").href = "MyPage.html";
 	}else{
-		
+		document.getElementById("changeLogin").innerText = "로그인";
+		document.getElementById("changeLogin").href = "login.html";	
 	}
 }
 
