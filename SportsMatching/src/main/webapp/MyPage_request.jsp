@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="SportsMatching.*" %>>
 <%
-	String d = request.getParameter("d");
-	System.out.println(d);
+
+String result = new userloadDAO().userloadDAO("ssid");
+System.out.println(result);
 %>
