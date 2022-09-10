@@ -13,8 +13,7 @@ public class WithdrawalDAO {
 			ptstn.setString(1, id);
 			System.out.println(ptstn);
 			ptstn.executeUpdate();
-			
-			
+				
 			return "성공";
 		}catch(Exception e) {
 			System.out.println(e.getMessage());

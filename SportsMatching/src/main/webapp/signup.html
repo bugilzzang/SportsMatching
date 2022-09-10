@@ -10,7 +10,7 @@
 
 <body>
     <div id='title_area'>
-        <a href='SportsMatching.html' class='content_text' id='title_text'>Sports Matching</a>
+        <a href='MAIN.html' class='content_text' id='title_text'>Sports Matching</a>
     </div>
 
 
@@ -21,7 +21,6 @@
                     <h1>회원가입</h1>
                 </div>
             </div>
-
             
 
         </div>
@@ -61,10 +60,8 @@
 
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
-
-
-
     function trySignup(){
+    	
     	var name = username.value;
     	var id = userid.value;
     	var pw = userpw.value;
@@ -76,8 +73,7 @@
     		alert("비밀번호가 일치하지 않습니다.");
     		return;
     	}
-    	
-    		
+    	    		
         $.ajax ( {
             url: "./signup.jsp",
             method: "POST",
