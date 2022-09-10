@@ -8,7 +8,7 @@
     </style>
 </head>
 
-<body>
+<body onload="wasLogin()">
      <div id='title_area'>
          <a href='login.html' class='content_text' id='title_text'>Sports Matching</a>
 
@@ -47,19 +47,41 @@
 
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
+function wasLogin(){
+	if(sessionStorage.getItem('ssid') != null){
+		
+	}else{
+		
+	}
+}
+
+
 function goChating(){
-	window.location.href="chating.html"
+	if(sessionStorage.getItem('ssid') != null){
+		window.location.href="chating.html"
+	}else{
+		window.location.href="login.html"
+	}
+	
 }
 
 function goRating(){
-	window.location.href="userRating.html"
+	if(sessionStorage.getItem('ssid') != null){
+		window.location.href="userRating.html"
+	}else{
+		window.location.href="login.html"
+	}
 }
 
 function goMatching(){
-	window.location.href="SportsMatching.html"
+	if(sessionStorage.getItem('ssid') != null){
+		window.location.href="SportsMatching.html"
+	}else{
+		window.location.href="login.html"
+	}
 }
 
 function goMarketing(){
-	window.location.href="MyPage.html"
+	window.location.href="SportsMarketing.html"
 }
 </script>
