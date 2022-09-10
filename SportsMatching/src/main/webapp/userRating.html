@@ -40,13 +40,13 @@
             </div>
             <div class="row">
                 <div class="form-group" style ="width : 300px;">
-                    <label><input type="checkbox" name="isWinner" id="isWinner" value="Winner" style=""> WINNER TEAM </label>
+                    <label><input type="checkbox" name="isWinner" id="isWinner" value="Winner" checked> WINNER TEAM </label>
                 </div>
             </div>
         </div>
         <div class="panel-btn">
             <div class="row">
-                <button class="loginbtn" id="loginbtn" onclick="tryLogin()">평가</button>
+                <button class="loginbtn" id="loginbtn" onclick="Rate()">평가</button>
             </div>            
         </div>
     </div>
@@ -56,5 +56,30 @@
 </body>
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
-
+function Rate(){
+	var isWinner_checked = $(isWinner).prop("checked");
+	var MVP_checked = $(isMVP).prop("checked");
+	
+	var id = document.getElementById('userid').value;
+	
+	$.ajax ({
+		url : "./userRating_request.jsp",
+		method : "POST",
+		data : { id : id, isWinner_checked : isWinner_checked, MVP_checked : MVP_checked },
+        dataType : "text",
+        success: (data) => {
+        	if(data.trim() == "성공"){
+        		alert("평가 성공");
+        		window.location.href = "MAIN.html";
+            }
+            else if(data.trim() == "서칭실패"){
+        	    alert("아이디가 잘못 되었습니다.");
+            }else if(data.trim() == "실패"){
+            	alert("오류");
+            }else{
+            	alert("체크박스를 1개이상 선택하세요.");
+            }
+        }
+    })
+}
 </script>

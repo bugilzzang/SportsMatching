@@ -65,7 +65,7 @@ public class RatingDAO {
 	public String WINNER_MMR(String userID)
 	{
 		
-		String SQL = "UPDATE USER SET user_mmr = user_mmr + 5000 WHERE user_id = ?";
+		String SQL = "UPDATE USER SET user_mmr = user_mmr + 500 WHERE user_id = ?";
 		
 		try {
 			Connection conn = DBConnection.GetDB();
