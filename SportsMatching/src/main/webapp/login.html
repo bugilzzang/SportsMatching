@@ -60,8 +60,6 @@ function tryLogin(){
     	var id = userid.value;
     	var pw = userpw.value;
     	
-    	sessionStorage.setItem("ssid", JSON.stringify(id));
-
         $.ajax ( {
             url: "./login_request.jsp",
             method: "POST",
@@ -71,6 +69,7 @@ function tryLogin(){
             	if (data.trim() == "로그인성공")
             	{            	  
             	  alert("로그인 성공!");
+            	  sessionStorage.setItem("ssid", id);
             	  window.location.href="MAIN.html";
             	}
             	else if(data.trim() == "로그인실패"){
