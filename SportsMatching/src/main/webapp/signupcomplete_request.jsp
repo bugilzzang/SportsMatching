@@ -15,5 +15,4 @@ System.out.println(id + "," + MVP + "," + isWinner);
 
 
 
-out.print(result);
 %>
