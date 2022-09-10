@@ -131,10 +131,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <div id='title_area'>
 	<a href='./MAIN.html' class='menu_text' id='title_text'>Sports Matching</a>
 	
-	<!--DEFAULT NO LOGIN STATE-->
-	<div id='login_status'>
-		<a class='menu_button menu_text'>로그인</a>
-	</div>
+	
 </div>
 
 <div id='content_area'>
@@ -190,9 +187,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	<div class='content_line'></div>
 	<div class='content_box' style='padding-left: 450px;'>
 		<a class='content_text content_desc_text content_button' onclick='matching()'>매칭하기</a>
-		<a class='content_text content_desc_text content_button' style='margin-left: 35px; background-color: #FFFFFF; color: #000000; border: 2px solid #888888;'>취소</a>
+		<a href='./MAIN.html' class='content_text content_desc_text content_button' style='margin-left: 35px; background-color: #FFFFFF; color: #000000; border: 2px solid #888888;'>취소</a>
 	</div>
 	<div class='content_line' style='border-top: 3px solid #999999;'></div>
+	
+	<div style='padding-left: 450px; margin-top: 50px;'>
+		<a href='./SportsMatching_List.html' class='content_text content_desc_text content_button' style='background-color: #FFFFFF; color: #000000; border: 2px solid #888888;'>매칭목록</a>
+		<a href='./SportsMatching_My.html' class='content_text content_desc_text content_button' style='margin-left: 35px; background-color: #FFFFFF; color: #000000; border: 2px solid #888888;'>내 매칭</a>
+	</div>
 </div>
 
 </body>
@@ -201,15 +203,30 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <script>
 
 $(document).ready(() => { 
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	
+	
 	var d = new Date();
 	date_input.value = d.getFullYear() + "-" + (d.getMonth() + 1).toString().padStart(2, "0") + "-" + d.getDate().toString().padStart(2, "0");
-	time_input1.value = d.getHours() + ":" + d.getMinutes();
-	time_input2.value = d.getHours() + ":" + d.getMinutes();
+	time_input1.value = d.getHours().toString().padStart(2, "0") + ":" + d.getMinutes().toString().padStart(2, "0");
+	time_input2.value = d.getHours().toString().padStart(2, "0") + ":" + d.getMinutes().toString().padStart(2, "0");
 })
 
 function matching()
 {
-	var owner = "대충왕멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	
+	var owner = sessionStorage.getItem("ssid");
 	var kind = kind_input.value;
 	var date = date_input.value;
 	var time1 = time_input1.value;

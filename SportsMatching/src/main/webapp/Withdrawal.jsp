@@ -3,8 +3,11 @@
 <%@ page import="SportsMatching.*"%>
 
 <%
-String id = request.getParameter("id");
+String id = request.getParameter("ssid");
 
-String result = new WithdrawalDAO().Withdrawal(id)
+System.out.println(id);
+
+String result = new WithdrawalDAO().Withdrawal(id);
+
 out.print(result);
 %>
