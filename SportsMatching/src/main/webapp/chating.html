@@ -554,7 +554,14 @@ var selectedRoom = -1;
 
 $(document).ready(() => { 
 	
-	var owner = "안멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	
+	var owner = sessionStorage.getItem("ssid");
 	
 	$.ajax ( {
         url: "./matching_list_my.jsp",
@@ -634,7 +641,14 @@ $(document).ready(() => {
 
 function ShowMessage(no)
 {
-	var owner = "안멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	
+	var owner = sessionStorage.getItem("ssid");
 	
 	$.ajax ( {
         url: "./chat_get_message.jsp",
@@ -686,8 +700,14 @@ function SendMessage()
 	{
 		return;
 	}
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
 	
-	var owner = "안멋진닉네임";
+	var owner = sessionStorage.getItem("ssid");
 	var message = message_input.value;
 	
 	if (message.trim() == "")

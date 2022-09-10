@@ -131,6 +131,12 @@ public class MatchingDAO {
 				
 				return "이미";
 			}
+			if (state.executeQuery("select _owner from matching where _no=" + no + " and _owner='" + owner + "'").next())
+			{
+				state.close();
+				
+				return "이미";
+			}
 			
 			state.close();
 			
