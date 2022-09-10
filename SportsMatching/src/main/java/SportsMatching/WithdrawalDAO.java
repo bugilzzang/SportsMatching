@@ -10,7 +10,6 @@ public class WithdrawalDAO {
 		try {
 			Connection conn = DBConnection.GetDB();
 			PreparedStatement ptstn = conn.prepareStatement(SQL);
-			id = id.replaceAll("\"","");
 			ptstn.setString(1, id);
 			System.out.println(ptstn);
 			ptstn.executeUpdate();
