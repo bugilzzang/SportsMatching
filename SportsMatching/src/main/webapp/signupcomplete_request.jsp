@@ -3,15 +3,8 @@
 <%@ page import="SportsMatching.*"%>
 
 <%
-String id = request.getParameter("id");
-String isWinner = request.getParameter("isWinner_checked");
-String MVP = request.getParameter("MVP_checked");
-String result ;
-
-System.out.println(id + "," + MVP + "," + isWinner);
-
-
-
+String id = request.getParameter("ssid");
+String result = new userloadDAO().userloadDAO(id);
 
 
 
