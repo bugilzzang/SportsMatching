@@ -47,9 +47,9 @@
 		
 		
 		$.ajax ({
-			url : "./userRating_request.jsp",
+			url : "./signupcomplete_request.jsp",
 			method : "POST",
-			data : { id : id, isWinner_checked : isWinner_checked, MVP_checked : MVP_checked },
+			data : { ssid : ssid },
 	        dataType : "text",
 	        success: (data) => {
 	        	if(data.trim() == "성공"){
