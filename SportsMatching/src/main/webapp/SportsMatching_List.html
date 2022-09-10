@@ -135,10 +135,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <div id='title_area'>
 	<a href='./MAIN.html' class='menu_text' id='title_text'>Sports Matching</a>
 	
-	<!--DEFAULT NO LOGIN STATE-->
-	<div id='login_status'>
-		<a class='menu_button menu_text'>로그인</a>
-	</div>
 </div>
 
 <div id='content_area'>
@@ -153,7 +149,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 $(document).ready(() => { 
 	
-	var owner = "안멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	var owner = sessionStorage.getItem("ssid");
 	
 	$.ajax ( {
         url: "./matching_list.jsp",
@@ -243,7 +245,13 @@ $(document).ready(() => {
 
 function JoinMatching(no)
 {
-	var owner = "안멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	var owner = sessionStorage.getItem("ssid");
 	
     $.ajax ( {
         url: "./matching_join.jsp",
@@ -254,6 +262,7 @@ function JoinMatching(no)
         	if (data.trim() == "성공")
         	{
         		alert("매칭 참여에 성공했습니다.");
+        		window.location = "./SportsMatching_My.html";
         	}
         	else if (data.trim() == "이미")
         	{

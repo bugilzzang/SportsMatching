@@ -138,10 +138,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 <div id='title_area'>
 	<a href='./MAIN.html' class='menu_text' id='title_text'>Sports Matching</a>
 	
-	<!--DEFAULT NO LOGIN STATE-->
-	<div id='login_status'>
-		<a class='menu_button menu_text'>로그인</a>
-	</div>
+	
 </div>
 
 <div id='content_area1'>
@@ -158,10 +155,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 <script src='./js/jquery-3.6.1.min.js'></script>
 <script>
-
 $(document).ready(() => { 
 	
-	var owner = "대충왕멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	
+	var owner = sessionStorage.getItem("ssid");
 	
 	$.ajax ( {
         url: "./matching_list_my.jsp",
@@ -348,7 +351,13 @@ $(document).ready(() => {
 
 function CompleteMatching(no)
 {
-	var owner = "대충왕멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	var owner = sessionStorage.getItem("ssid");
 	
     $.ajax ( {
         url: "./matching_complete.jsp",
@@ -373,7 +382,13 @@ function CompleteMatching(no)
 }
 function CancelMatching(no)
 {
-	var owner = "대충왕멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	var owner = sessionStorage.getItem("ssid");
 	
     $.ajax ( {
         url: "./matching_cancel.jsp",
@@ -399,7 +414,13 @@ function CancelMatching(no)
 
 function LeaveMatching(no)
 {
-	var owner = "대충왕멋진닉네임";
+	if (sessionStorage.getItem("ssid") == null)
+	{
+		alert("로그인이 필요한 서비스입니다.");
+		window.location = "./login.html";
+		return;
+	}
+	var owner = sessionStorage.getItem("ssid");
 	
     $.ajax ( {
         url: "./matching_leave.jsp",
