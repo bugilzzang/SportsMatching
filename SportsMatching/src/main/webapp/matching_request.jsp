@@ -12,6 +12,7 @@
 	String many1 = request.getParameter("many1");
 	String many2 = request.getParameter("many2");
 	String our = request.getParameter("our");
+	String location = request.getParameter("location");
 	
 	System.out.println("매칭 등록");
 	System.out.println(owner);
@@ -24,8 +25,9 @@
 	System.out.println(many1);
 	System.out.println(many2);
 	System.out.println(our);
+	System.out.println(location);
 	
-	String result = new MatchingDAO().Matching(owner, kind, date, time1, time2, mmr1, mmr2, many1, many2, our);
+	String result = new MatchingDAO().Matching(owner, kind, date, time1, time2, mmr1, mmr2, many1, many2, our, location);
 	
 	out.print(result);
 %>

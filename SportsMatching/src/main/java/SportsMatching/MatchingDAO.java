@@ -7,7 +7,7 @@ import org.json.simple.*;
 
 public class MatchingDAO {
 
-	public String Matching(String owner, String kind, String date, String time1, String time2, String mmr1, String mmr2, String many1, String many2, String our)
+	public String Matching(String owner, String kind, String date, String time1, String time2, String mmr1, String mmr2, String many1, String many2, String our, String location)
 	{
 		try 
 		{
@@ -25,7 +25,8 @@ public class MatchingDAO {
 			query += mmr2 + ",";
 			query += many1 + ",";
 			query += many2 + ",";
-			query += our + ");";
+			query += our + ",'";
+			query += location + "');";
 			
 			state.executeUpdate(query);
 			
@@ -80,6 +81,7 @@ public class MatchingDAO {
 			ArrayList manys1 = new ArrayList();
 			ArrayList manys2 = new ArrayList();
 			ArrayList ours = new ArrayList();
+			ArrayList locations = new ArrayList();
 			
 			while (result.next())
 			{
@@ -94,6 +96,7 @@ public class MatchingDAO {
 				manys1.add(result.getInt(9));
 				manys2.add(result.getInt(10));
 				ours.add(result.getInt(11));
+				locations.add(result.getString(12));
 			}
 			
 			json.put("no", nos);
@@ -106,6 +109,7 @@ public class MatchingDAO {
 			json.put("many1", manys1);
 			json.put("many2", manys2);
 			json.put("our", ours);
+			json.put("location", locations);
 			
 			state.close();
 			result.close();
@@ -188,6 +192,7 @@ public class MatchingDAO {
 			ArrayList manys1 = new ArrayList();
 			ArrayList manys2 = new ArrayList();
 			ArrayList ours = new ArrayList();
+			ArrayList locations = new ArrayList();
 			
 			while (result.next())
 			{
@@ -202,6 +207,7 @@ public class MatchingDAO {
 				manys1.add(result.getInt(9));
 				manys2.add(result.getInt(10));
 				ours.add(result.getInt(11));
+				locations.add(result.getString(12));
 			}
 			
 			json.put("no", nos);
@@ -214,6 +220,7 @@ public class MatchingDAO {
 			json.put("many1", manys1);
 			json.put("many2", manys2);
 			json.put("our", ours);
+			json.put("location", locations);
 			
 			state.close();
 			result.close();
@@ -341,6 +348,7 @@ public class MatchingDAO {
 			ArrayList manys1 = new ArrayList();
 			ArrayList manys2 = new ArrayList();
 			ArrayList ours = new ArrayList();
+			ArrayList locations = new ArrayList();
 			
 			while (result.next())
 			{
@@ -360,6 +368,7 @@ public class MatchingDAO {
 					manys1.add(result2.getInt(9));
 					manys2.add(result2.getInt(10));
 					ours.add(result2.getInt(11));
+					locations.add(result2.getString(12));
 				}
 				
 				state2.close();
@@ -376,6 +385,7 @@ public class MatchingDAO {
 			json.put("many1", manys1);
 			json.put("many2", manys2);
 			json.put("our", ours);
+			json.put("location", locations);
 			
 			state.close();
 			result.close();
