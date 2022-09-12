@@ -82,6 +82,7 @@
             success: (data) => {
             	if (data.trim() == "성공")
             	{
+            	  sessionStorage.setItem("ssid", userid.value);
             	  window.location.href="signupcomplete.html"
             	}
             	else if(data.trim() == "중복"){

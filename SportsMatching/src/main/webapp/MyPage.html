@@ -10,7 +10,7 @@
 
 <body onload = 'userload()'>
      <div id='title_area'>
-          <a href='login.html' class='content_text' id='title_text'>Sports Matching</a>
+          <a href='MAIN.html' class='content_text' id='title_text'>Sports Matching</a>
 
           <div id='login_status'>
                <a href='MAIN.html' class='menu_button content_text'>홈으로</a>
@@ -89,6 +89,7 @@ function Withdrawal(){
         	if(data.trim() == "성공"){
         		alert("회원 탈퇴 성공");
         	    sessionStorage.clear();
+        	    window.location.href = "MAIN.html";
             }
             else{
         	    alert("회원 탈퇴 실패");
