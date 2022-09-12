@@ -50,20 +50,23 @@ public class RankingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			String query = "select USER_NAME , s_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by s_mmr desc limit 5"; //조인했
+			String query = "select USER_NAME , USER_ADDRESS ,s_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by s_mmr desc limit 5"; //조인했
 			
 			ResultSet result = state.executeQuery(query);
 			
 			JSONObject json = new JSONObject();
 			ArrayList USER_NAMEs = new ArrayList();
+			ArrayList USER_ADDRESSs = new ArrayList();
 			ArrayList s_Mmrs = new ArrayList();
 			
 			while (result.next())
 			{
 				USER_NAMEs.add(result.getString(1));
-				s_Mmrs.add(result.getInt(2));
+				USER_ADDRESSs.add(result.getString(2));
+				s_Mmrs.add(result.getInt(3));
 			}
 			json.put("USER_NAME", USER_NAMEs);
+			json.put("USER_ADDRESS", USER_ADDRESSs);
 			json.put("s_Mmr", s_Mmrs);
 			
 			state.close();
@@ -82,20 +85,23 @@ public class RankingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			String query = "select USER_NAME , b_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by b_mmr desc limit 5"; //조인했
+			String query = "select USER_NAME , USER_ADDRESS ,b_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by b_mmr desc limit 5"; //조인했
 			
 			ResultSet result = state.executeQuery(query);
 			
 			JSONObject json2 = new JSONObject();
 			ArrayList USER_NAMEs = new ArrayList();
+			ArrayList USER_ADDRESSs = new ArrayList();
 			ArrayList b_Mmrs = new ArrayList();
 			
 			while (result.next())
 			{
 				USER_NAMEs.add(result.getString(1));
-				b_Mmrs.add(result.getInt(2));
+				USER_ADDRESSs.add(result.getString(2));
+				b_Mmrs.add(result.getInt(3));
 			}
 			json2.put("USER_NAME", USER_NAMEs);
+			json2.put("USER_ADDRESS", USER_ADDRESSs);
 			json2.put("b_Mmr", b_Mmrs);
 			
 			state.close();
@@ -114,21 +120,24 @@ public class RankingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			String query = "select USER_NAME , t_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by t_mmr desc limit 5"; //조인했
+			String query = "select USER_NAME , USER_ADDRESS ,t_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by t_mmr desc limit 5"; //조인했
 			
 			ResultSet result = state.executeQuery(query);
 			
 			JSONObject json3 = new JSONObject();
 			ArrayList USER_NAMEs = new ArrayList();
+			ArrayList USER_ADDRESSs = new ArrayList();
 			ArrayList t_Mmrs = new ArrayList();
 			
 			while (result.next())
 			{
 				USER_NAMEs.add(result.getString(1));
-				t_Mmrs.add(result.getInt(2));
+				USER_ADDRESSs.add(result.getString(2));
+				t_Mmrs.add(result.getInt(3));
 			}
 			json3.put("USER_NAME", USER_NAMEs);
-			json3.put("t_Mmr", t_Mmrs);
+			json3.put("USER_ADDRESS", USER_ADDRESSs);
+			json3.put("s_Mmr", t_Mmrs);
 			
 			state.close();
 			result.close();
@@ -146,21 +155,24 @@ public class RankingDAO {
 			
 			Statement state = conn.createStatement();
 			
-			String query = "select USER_NAME , h_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by h_mmr desc limit 5"; //조인했
+			String query = "select USER_NAME , USER_ADDRESS ,h_mmr from user as u , Mmr as m where u.USER_ID = m.ID order by h_mmr desc limit 5"; //조인했
 			
 			ResultSet result = state.executeQuery(query);
 			
 			JSONObject json4 = new JSONObject();
 			ArrayList USER_NAMEs = new ArrayList();
+			ArrayList USER_ADDRESSs = new ArrayList();
 			ArrayList h_Mmrs = new ArrayList();
 			
 			while (result.next())
 			{
 				USER_NAMEs.add(result.getString(1));
-				h_Mmrs.add(result.getInt(2));
+				USER_ADDRESSs.add(result.getString(2));
+				h_Mmrs.add(result.getInt(3));
 			}
 			json4.put("USER_NAME", USER_NAMEs);
-			json4.put("h_Mmr", h_Mmrs);
+			json4.put("USER_ADDRESS", USER_ADDRESSs);
+			json4.put("s_Mmr", h_Mmrs);
 			
 			state.close();
 			result.close();
