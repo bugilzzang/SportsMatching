@@ -181,6 +181,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	<div class='content_line'></div>
 	<div class='content_box'>
 		<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
+		<div class='content_text content_desc_text content_desc_head'>지역</div>
+		<input class='content_input_text content_desc_text content_input1' id='location_input'></input>
+	</div>
+	<div class='content_line'></div>
+	<div class='content_box'>
+		<div class='content_image' style='background-image:url(./images/our_img.png);'></div>
 		<div class='content_text content_desc_text content_desc_head'>신청인원</div>
 		<input class='content_input_text content_desc_text content_input1' id='our_input'></input>
 	</div>
@@ -236,6 +242,7 @@ function matching()
 	var many1 = many_input1.value;
 	var many2 = many_input2.value;
 	var our = our_input.value;
+	var location = location_input.value;
 	
 	if (mmr1.trim() == "" || mmr2.trim() == "" || many1.trim() == "" || many2.trim() == "" || our.trim() == "")
 	{
@@ -246,7 +253,7 @@ function matching()
     $.ajax ( {
         url: "./matching_request.jsp",
         method: "POST",
-        data: { owner: owner, kind: kind, date: date, time1: time1, time2: time2, mmr1: mmr1, mmr2: mmr2, many1: many1, many2: many2, our: our },
+        data: { owner: owner, kind: kind, date: date, time1: time1, time2: time2, mmr1: mmr1, mmr2: mmr2, many1: many1, many2: many2, our: our, location: location },
         dataType: "text",
         success: (data) => {
         	if (data.trim() == "성공")

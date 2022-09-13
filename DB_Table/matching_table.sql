@@ -10,5 +10,6 @@ create table matching (
     _mmr2 int,
     _many1 int,
     _many2 int,
-    _our int
+    _our int,
+    _location varchar(20)
 )
