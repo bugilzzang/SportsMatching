@@ -185,9 +185,19 @@ h1,h2,h3{
     text-align: center;
     margin-right : 0px;
     margin-top : 60px;
-    margin-left : 123px;
+    margin-left : 30px;
+    background-repeat: no-repeat;
+	background-position: center; 
+	display: inline-block;
 }
 
+.go_rankingpage{
+    width : 120px;
+    align-items: center;
+    text-align: center;
+    margin-right : 0px;
+    display: inline-block;
+}
 
 
 
