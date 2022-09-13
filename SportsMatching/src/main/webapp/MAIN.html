@@ -24,10 +24,10 @@
             
         </div>
         
-     <div class="go_ratingpage">
-        <img id="evalution_img" src="./images/SMevalution.jpg" onclick = goRating() width="95" height="95">
-        <label class="signupcomplete" style="font-weight: bold; font-size: 20px;padding-bottom: 20px;">유저 평가</label>
-     </div>
+   		<div class="go_ratingpage">
+      	  <img id="evalution_img" src="./images/SMevalution.jpg" onclick = goRating() width="95" height="95">
+      	  <label class="signupcomplete" style="font-weight: bold; font-size: 25px;padding-bottom: 20px;">유저 평가</label>
+ 	    </div>
         
      </div>
 
@@ -37,12 +37,18 @@
      </div>
 
      
-      
-     <div class="go_marketing">
-        <img id="chating_img" src="./images/SMpartner.jpg" onclick = goMarketing() width="150" height="150">
-        <label class="signupcomplete" style="line-height: 30px;font-weight: bold; font-size: 25px;padding-bottom: 30px;">PARTNERS</label>
-     </div>            
+      <div style = "width : 370px;margin: 0px;">
+      	<div class="go_marketing">
+      	  <img id="chating_img" src="./images/SMpartner.jpg" onclick = goMarketing() width="150" height="150">
+     	   <label class="signupcomplete" style="line-height: 30px;font-weight: bold; font-size: 20px;padding-bottom: 30px;">PARTNERS</label>
+    	</div>            
 
+		 <div class="go_rankingpage" style="padding-top:45px;padding-right:45px;">
+   	      <img id="evalution_img" src="./images/rankingimage.jpg" onclick = goRanking() width="95" height="95" >
+  	      <label class="signupcomplete" style="font-weight: bold; font-size: 25px;padding-bottom: 20px;">랭킹</label>
+   		</div>
+      </div>
+     
 </body>
 
 <script src='./js/jquery-3.6.1.min.js'></script>
@@ -84,6 +90,10 @@ function goMatching(){
 }
 
 function goMarketing(){
-	window.location.href="SportsMarketing.html"
+	window.location.href="SportMarketing.html"
+}
+
+function goRanking(){
+	window.location.href="EvaluationAndRanking.html"
 }
 </script>
