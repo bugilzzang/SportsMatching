@@ -106,9 +106,9 @@ h1,h2,h3{
 }
 .signuplabel{
     float : left;
-    width : 80px;
+    width : 90px;
     height : 30px;
-    margin-right: 5px;
+    margin-right: 10px;
     font-size : 12px;
 }
 .signupbtn{

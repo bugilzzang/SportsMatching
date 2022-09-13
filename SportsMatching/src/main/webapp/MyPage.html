@@ -89,6 +89,7 @@ function Withdrawal(){
         	if(data.trim() == "성공"){
         		alert("회원 탈퇴 성공");
         	    sessionStorage.clear();
+        	    window.location.href="MAIN.html"
             }
             else{
         	    alert("회원 탈퇴 실패");
