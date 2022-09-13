@@ -82,7 +82,8 @@
             success: (data) => {
             	if (data.trim() == "성공")
             	{
-            	  window.location.href="signupcomplete.html"
+            	  window.location.href="signupcomplete.html";
+            	  sessionStorage.setItem("ssid", id);
             	}
             	else if(data.trim() == "중복"){
             		alert("이미 존재하는 아이디입니다.");

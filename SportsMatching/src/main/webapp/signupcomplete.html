@@ -8,12 +8,12 @@
     </style>
 </head>
 
-<body onclick="load_user_id()">
+<body onload="load_user_id()">
      <div id='title_area'>
-          <a href='login.html' class='content_text' id='title_text'>Sports Matching</a>
+          <a href='MAIN.html' class='content_text' id='title_text'>Sports Matching</a>
 
           <div id='login_status'>
-               <a href='login.html' class='menu_button content_text'>로그인</a>
+               <a href='MAIN.html' class='menu_button content_text'>홈으로</a>
           </div>
       </div>
 
@@ -43,27 +43,7 @@
 <script>
 	function load_user_id(){
 		var user_id = sessionStorage.getItem('ssid');
-		document.getElementById("signup_user_id").innerText = user_id;
+		document.getElementById("signup_user_id").innerText = user_id + "님";
 		
-		
-		$.ajax ({
-			url : "./signupcomplete_request.jsp",
-			method : "POST",
-			data : { ssid : ssid },
-	        dataType : "text",
-	        success: (data) => {
-	        	if(data.trim() == "성공"){
-	        		alert("평가 성공");
-	        		window.location.href = "MAIN.html";
-	            }
-	            else if(data.trim() == "서칭실패"){
-	        	    alert("아이디가 잘못 되었습니다.");
-	            }else if(data.trim() == "실패"){
-	            	alert("오류");
-	            }else{
-	            	alert("체크박스를 1개이상 선택하세요.");
-	            }
-	        }
-	    })
 	}
 </script>
