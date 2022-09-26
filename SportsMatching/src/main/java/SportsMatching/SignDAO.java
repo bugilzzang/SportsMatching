@@ -37,6 +37,14 @@ public class SignDAO {
 					ptstm.setInt(5, Integer.parseInt(mmr));
 				    ptstm.executeUpdate();
 				    
+				    Statement state = conn.createStatement();
+					
+					String query = "insert into Mmr values('";
+					query += name + "', 500, 500, 500, 500);";
+					
+					state.executeUpdate(query);
+					state.close();
+				    
 				    ptstm.close();
 					return "성공";
 			    }catch (Exception e){
