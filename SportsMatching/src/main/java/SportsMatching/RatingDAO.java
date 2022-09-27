@@ -40,7 +40,7 @@ public class RatingDAO {
 	public String MVP_MMR(String userID)
 	{
 		
-		String SQL = "UPDATE USER SET user_mmr = user_mmr + 1000 WHERE user_id = ?";
+		String SQL = "UPDATE Mmr SET S_MMR = S_MMR + 5 WHERE ID = ?";
 		
 		try {
 			Connection conn = DBConnection.GetDB();
@@ -65,7 +65,7 @@ public class RatingDAO {
 	public String WINNER_MMR(String userID)
 	{
 		
-		String SQL = "UPDATE USER SET user_mmr = user_mmr + 500 WHERE user_id = ?";
+		String SQL = "UPDATE Mmr SET S_MMR = S_MMR + 10 WHERE ID = ?";
 		
 		try {
 			Connection conn = DBConnection.GetDB();
@@ -90,7 +90,7 @@ public class RatingDAO {
 	public String doubleCheck_MMR(String userID)
 	{
 		
-		String SQL = "UPDATE USER SET user_mmr = user_mmr + 1500 WHERE user_id = ?";
+		String SQL = "UPDATE Mmr SET S_MMR = S_MMR + 15 WHERE ID = ?";
 		
 		try {
 			Connection conn = DBConnection.GetDB();

@@ -77,8 +77,8 @@ body {
 </head>
 
 <body>
-  <div class="ranking">
-    Ranking
+   <div class="ranking" onclick = "goMain()">
+    Sports Matching
   </div>
 
   <div class="box">
@@ -100,7 +100,7 @@ body {
         </div>
         <div class="bugi">
           <div class="rank-onerinformation">
-            <img src="./images/cho.png" height="158.5" weight="300" alt="cho">
+            <img src="./images/1st.jpeg" height="158.5" weight="300" alt="cho">
           </div>
           <div class="information">
             <div class="rank-onerdetailInformation">
@@ -121,7 +121,7 @@ body {
         </div>
         <div class="bugi">
           <div class="rank-onerinformation">
-            <img src="./images/cho.png" height="158.5" weight="300" alt="cho">
+            <img src="./images/2st.jpeg" height="158.5" weight="300" alt="cho">
           </div>
           <div class="information">
             <div class="rank-onerdetailInformation">
@@ -142,7 +142,7 @@ body {
         </div>
         <div class="bugi">
           <div class="rank-onerinformation">
-            <img src="./images/cho.png" height="158.5" weight="300" alt="cho">
+            <img src="./images/3st.jpeg" height="158.5" weight="300" alt="cho">
           </div>
           <div class="information">
             <div class="rank-onerdetailInformation">
@@ -164,7 +164,7 @@ body {
         </div>
         <div class="bugi">
           <div class="rank-onerinformation">
-            <img src="./images/cho.png" height="158.5" weight="300" alt="cho">
+            <img src="./images/4st.jpeg" height="158.5" weight="300" alt="cho">
           </div>
           <div class="information">
             <div class="rank-onerdetailInformation">
@@ -187,7 +187,7 @@ body {
         </div>
         <div class="bugi">
           <div class="rank-onerinformation">
-            <img src="./images/cho.png" height="158.5" weight="300" alt="cho">
+            <img src="./images/5st.jpeg" height="158.5" weight="300" alt="cho">
           </div>
           <div class="information">
             <div class="rank-onerdetailInformation">
@@ -244,9 +244,9 @@ body {
 	                	$("#userAdress" + (i+1)).val(target[3].USER_ADDRESS[i]);	
 	            	}
 	                
-	                for (var i = 0; i < target[3].h_mmr.length; i++)
+	                for (var i = 0; i < target[3].s_Mmr.length; i++)
 	                {
-	                	$("#userMmr" + (i+1)).val(target[3].h_mmr[i]);
+	                	$("#userMmr" + (i+1)).val(target[3].s_Mmr[i]);
 	                	
 	            	}
 	                
@@ -259,6 +259,9 @@ body {
 
 	});
 
+  function goMain(){
+	  window.location.href = "MAIN.html"
+  }
   </script>
 </body>
 
